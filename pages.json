@@ -1,0 +1,92 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "注册/登录"
+			}
+		},
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/ncpsy/index",
+			"style": {
+				"navigationBarTitleText": "溯源信息"
+			}
+		}, {
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/user/about",
+			"style": {
+				"navigationBarTitleText": "关于软件"
+			}
+		}, {
+			"path": "pages/user/smjl",
+			"style": {
+				"navigationBarTitleText": "扫码记录"
+			}
+
+		}, {
+			"path": "pages/user/sypl",
+			"style": {
+				"navigationBarTitleText": "我的评论"
+			}
+
+		}, {
+			"path": "pages/user/upp",
+			"style": {
+				"navigationBarTitleText": "修改资料"
+			}
+		},
+		{
+			"path": "pages/admin/farm",
+			"style": {
+				"navigationBarTitleText": "农场管理"
+			}
+
+		}, {
+			"path": "pages/admin/produce",
+			"style": {
+				"navigationBarTitleText": "产品管理"
+			}
+
+		}, {
+			"path": "pages/admin/suyuan",
+			"style": {
+				"navigationBarTitleText": "溯源管理"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#bfbfbf",
+		"selectedColor": "#2979ff",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/home/index",
+			"iconPath": "static/image/tabBar/home.png",
+			"selectedIconPath": "static/image/tabBar/home-o.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/user/index",
+			"iconPath": "static/image/tabBar/user.png",
+			"selectedIconPath": "static/image/tabBar/user-o.png",
+			"text": "我的"
+		}]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "农产品溯源",
+		"navigationBarBackgroundColor": "#2979ff",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}
