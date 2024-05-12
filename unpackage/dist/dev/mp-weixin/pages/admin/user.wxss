@@ -11,13 +11,13 @@
  *
  * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
  */
-.btn-box button {
+.btn-box button.data-v-60b42378 {
   margin-bottom: 30rpx;
 }
-button {
+button.data-v-60b42378 {
   background-color: #007aff !important;
 }
-button:active {
+button.data-v-60b42378:active {
   background-color: #94bcff !important;
 }
 /* 行为相关颜色 */
@@ -32,26 +32,14 @@ button:active {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.uni-popup {
-  position: fixed;
-  z-index: 99;
+.container.data-v-60b42378 {
+  padding: 20rpx;
 }
-.uni-popup.top, .uni-popup.left, .uni-popup.right {
-  top: 0;
+.container .allFarm.data-v-60b42378 {
+  padding: 20rpx;
 }
-.uni-popup .uni-popup__wrapper {
-  display: block;
-  position: relative;
-  /* iphonex 等安全区设置，底部安全区适配 */
-}
-.uni-popup .uni-popup__wrapper.left, .uni-popup .uni-popup__wrapper.right {
-  padding-top: 0;
-  flex: 1;
-}
-.fixforpc-z-index {
-  z-index: 999;
-}
-.fixforpc-top {
-  top: 0;
+.container .addFarm.data-v-60b42378 {
+  width: 600rpx;
+  padding: 20rpx;
 }
 

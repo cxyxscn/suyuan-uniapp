@@ -1,1 +1,0 @@
-<view class="container data-v-10f0eab5"><uni-list vue-id="f954676c-1" class="data-v-10f0eab5" bind:__l="__l" vue-slots="{{['default']}}"><uni-list-item vue-id="{{('f954676c-2')+','+('f954676c-1')}}" title="版本号" rightText="1.0.0" class="data-v-10f0eab5" bind:__l="__l"></uni-list-item></uni-list></view>

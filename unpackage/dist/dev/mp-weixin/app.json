@@ -10,7 +10,8 @@
     "pages/user/upp",
     "pages/admin/farm",
     "pages/admin/produce",
-    "pages/admin/suyuan"
+    "pages/admin/suyuan",
+    "pages/admin/user"
   ],
   "subPackages": [],
   "window": {

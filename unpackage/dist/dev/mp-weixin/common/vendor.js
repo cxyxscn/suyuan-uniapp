@@ -93,18 +93,18 @@ module.exports = _defineProperty, module.exports.__esModule = true, module.expor
 
 var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
 var toPrimitive = __webpack_require__(/*! ./toPrimitive.js */ 14);
-function _toPropertyKey(arg) {
-  var key = toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
+function toPropertyKey(t) {
+  var i = toPrimitive(t, "string");
+  return "symbol" == _typeof(i) ? i : i + "";
 }
-module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
 /***/ 129:
-/*!****************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-forms/components/uni-forms/validate.js ***!
-  \****************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-forms/components/uni-forms/validate.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -800,14 +800,14 @@ exports.default = _default;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _typeof(obj) {
+function _typeof(o) {
   "@babel/helpers - typeof";
 
-  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
-    return typeof obj;
-  } : function (obj) {
-    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
 }
 module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -897,9 +897,9 @@ module.exports = _getPrototypeOf, module.exports.__esModule = true, module.expor
 /***/ }),
 
 /***/ 134:
-/*!*************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-forms/components/uni-forms/utils.js ***!
-  \*************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-forms/components/uni-forms/utils.js ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1240,17 +1240,17 @@ exports.isEqual = isEqual;
 /***/ (function(module, exports, __webpack_require__) {
 
 var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
-function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
+function toPrimitive(t, r) {
+  if ("object" != _typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != _typeof(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return (hint === "string" ? String : Number)(input);
+  return ("string" === r ? String : Number)(t);
 }
-module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -1263,20 +1263,12 @@ module.exports = _toPrimitive, module.exports.__esModule = true, module.exports[
 
 var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf.js */ 16);
 var isNativeReflectConstruct = __webpack_require__(/*! ./isNativeReflectConstruct.js */ 17);
-function _construct(Parent, args, Class) {
-  if (isNativeReflectConstruct()) {
-    module.exports = _construct = Reflect.construct.bind(), module.exports.__esModule = true, module.exports["default"] = module.exports;
-  } else {
-    module.exports = _construct = function _construct(Parent, args, Class) {
-      var a = [null];
-      a.push.apply(a, args);
-      var Constructor = Function.bind.apply(Parent, a);
-      var instance = new Constructor();
-      if (Class) setPrototypeOf(instance, Class.prototype);
-      return instance;
-    }, module.exports.__esModule = true, module.exports["default"] = module.exports;
-  }
-  return _construct.apply(null, arguments);
+function _construct(t, e, r) {
+  if (isNativeReflectConstruct()) return Reflect.construct.apply(null, arguments);
+  var o = [null];
+  o.push.apply(o, e);
+  var p = new (t.bind.apply(t, o))();
+  return r && setPrototypeOf(p, r.prototype), p;
 }
 module.exports = _construct, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -1308,15 +1300,12 @@ module.exports = _setPrototypeOf, module.exports.__esModule = true, module.expor
 /***/ (function(module, exports) {
 
 function _isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
   try {
-    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
+    var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+  } catch (t) {}
+  return (module.exports = _isNativeReflectConstruct = function _isNativeReflectConstruct() {
+    return !!t;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports)();
 }
 module.exports = _isNativeReflectConstruct, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -2024,11 +2013,15 @@ var he = {
         complete: function complete(e) {
           e || (e = {}), S && "web" === P && e.errMsg && 0 === e.errMsg.indexOf("request:fail") && console.warn("发布H5，需要在uniCloud后台操作，绑定安全域名，否则会因为跨域问题而无法访问。教程参考：https://uniapp.dcloud.io/uniCloud/quickstart?id=useinh5");
           var t = e.data && e.data.header && e.data.header["x-serverless-request-id"] || e.header && e.header["request-id"];
-          if (!e.statusCode || e.statusCode >= 400) return s(new te({
-            code: "SYS_ERR",
-            message: e.errMsg || "request:fail",
-            requestId: t
-          }));
+          if (!e.statusCode || e.statusCode >= 400) {
+            var _n4 = e.data && e.data.error && e.data.error.code || "SYS_ERR",
+              _r = e.data && e.data.error && e.data.error.message || e.errMsg || "request:fail";
+            return s(new te({
+              code: _n4,
+              message: _r,
+              requestId: t
+            }));
+          }
           var r = e.data;
           if (r.error) return s(new te({
             code: r.error.code,
@@ -2565,10 +2558,10 @@ function be(e) {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var _e6 = _step.value;
       var _t4 = _e6.isMatch,
-        _n4 = _e6.genAdapter,
+        _n5 = _e6.genAdapter,
         _s4 = _e6.runtime;
       if (_t4()) return {
-        adapter: _n4(),
+        adapter: _n5(),
         runtime: _s4
       };
     }
@@ -2634,16 +2627,16 @@ var Ce = /*#__PURE__*/function () {
     if (!this._storage) {
       this._persistence = ke.adapter.primaryStorage || e.persistence, this._storage = Te(this._persistence, ke.adapter);
       var _t5 = "access_token_".concat(e.env),
-        _n5 = "access_token_expire_".concat(e.env),
+        _n6 = "access_token_expire_".concat(e.env),
         _s5 = "refresh_token_".concat(e.env),
-        _r = "anonymous_uuid_".concat(e.env),
+        _r2 = "anonymous_uuid_".concat(e.env),
         _i = "login_type_".concat(e.env),
         _o = "user_info_".concat(e.env);
       this.keys = {
         accessTokenKey: _t5,
-        accessTokenExpireKey: _n5,
+        accessTokenExpireKey: _n6,
         refreshTokenKey: _s5,
-        anonymousUuidKey: _r,
+        anonymousUuidKey: _r2,
         loginTypeKey: _i,
         userInfoKey: _o
       };
@@ -2659,8 +2652,8 @@ var Ce = /*#__PURE__*/function () {
       for (var _e7 in this.keys) {
         var _s6 = this.keys[_e7];
         if (t && Ae.includes(_e7)) continue;
-        var _r2 = this._storage.getItem(_s6);
-        ve(_r2) || Ie(_r2) || (n.setItem(_s6, _r2), this._storage.removeItem(_s6));
+        var _r3 = this._storage.getItem(_s6);
+        ve(_r3) || Ie(_r3) || (n.setItem(_s6, _r3), this._storage.removeItem(_s6));
       }
       this._storage = n;
     }
@@ -3192,7 +3185,7 @@ var Ge = /*#__PURE__*/function () {
       var _send = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee11(e) {
         var t,
           n,
-          _n6,
+          _n7,
           _args11 = arguments;
         return _regenerator.default.wrap(function _callee11$(_context11) {
           while (1) {
@@ -3217,17 +3210,17 @@ var Ge = /*#__PURE__*/function () {
                   onUploadProgress: t.onUploadProgress
                 });
               case 9:
-                _n6 = _context11.sent;
-                if (!_n6.data.code) {
+                _n7 = _context11.sent;
+                if (!_n7.data.code) {
                   _context11.next = 12;
                   break;
                 }
                 throw new te({
-                  code: _n6.data.code,
-                  message: _n6.data.message
+                  code: _n7.data.code,
+                  message: _n7.data.message
                 });
               case 12:
-                return _context11.abrupt("return", _n6.data);
+                return _context11.abrupt("return", _n7.data);
               case 13:
                 if (!n.data.code) {
                   _context11.next = 15;
@@ -5141,13 +5134,13 @@ function Pt(_ref20) {
         var t = s["x-trace-id"] || "";
         if (!e.statusCode || e.statusCode >= 400) {
           var _ref21 = e.data || {},
-            _n7 = _ref21.message,
+            _n8 = _ref21.message,
             _s10 = _ref21.errMsg,
-            _r3 = _ref21.trace_id;
+            _r4 = _ref21.trace_id;
           return i(new te({
             code: "SYS_ERR",
-            message: _n7 || _s10 || "request:fail",
-            requestId: _r3 || t
+            message: _n8 || _s10 || "request:fail",
+            requestId: _r4 || t
           }));
         }
         r({
@@ -5785,7 +5778,7 @@ var $t = /*#__PURE__*/function () {
           s,
           r,
           i,
-          _r4,
+          _r5,
           _args39 = arguments;
         return _regenerator.default.wrap(function _callee39$(_context39) {
           while (1) {
@@ -5818,7 +5811,7 @@ var $t = /*#__PURE__*/function () {
                 _context39.next = 14;
                 return t.encryptData(s);
               case 14:
-                _r4 = _context39.sent;
+                _r5 = _context39.sent;
                 _context39.next = 17;
                 return t.platformGetSignOption();
               case 17:
@@ -5826,7 +5819,7 @@ var $t = /*#__PURE__*/function () {
                 _context39.next = 20;
                 return e({
                   name: n,
-                  data: _r4
+                  data: _r5
                 });
               case 20:
                 i = _context39.sent;
@@ -6950,11 +6943,11 @@ function qn(_ref40) {
 }
 function Fn(e) {
   var t = e.callFunction,
-    n = function n(_n8) {
+    n = function n(_n9) {
       var _this19 = this;
-      var s = _n8.name;
-      _n8.data = Lt.call(e, {
-        data: _n8.data
+      var s = _n9.name;
+      _n9.data = Lt.call(e, {
+        data: _n9.data
       });
       var r = {
           aliyun: "aliyun",
@@ -6962,10 +6955,10 @@ function Fn(e) {
           tcb: "tcb",
           alipay: "alipay"
         }[this.config.provider],
-        i = Nn(_n8),
-        o = Dn(_n8),
+        i = Nn(_n9),
+        o = Dn(_n9),
         a = i || o;
-      return t.call(this, _n8).then(function (e) {
+      return t.call(this, _n9).then(function (e) {
         return e.errCode = 0, !a && qn.call(_this19, {
           functionName: s,
           result: e,
@@ -6986,10 +6979,10 @@ function Fn(e) {
             n = _ref41$formatter === void 0 ? [] : _ref41$formatter;
           for (var _s13 = 0; _s13 < n.length; _s13++) {
             var _n$_s = n[_s13],
-              _r5 = _n$_s.rule,
+              _r6 = _n$_s.rule,
               _i3 = _n$_s.content,
               _o3 = _n$_s.mode,
-              _a = e.match(_r5);
+              _a = e.match(_r6);
             if (!_a) continue;
             var _c = _i3;
             for (var _e19 = 1; _e19 < _a.length; _e19++) {
@@ -7002,7 +6995,7 @@ function Fn(e) {
           }
           return e;
         }({
-          message: "[".concat(_n8.name, "]: ").concat(e.message),
+          message: "[".concat(_n9.name, "]: ").concat(e.message),
           formatter: Ut,
           extraInfo: {
             functionName: s
@@ -7040,7 +7033,9 @@ function Fn(e) {
       get: function get() {
         return console.warn("当前返回结果为Promise类型，不可直接访问其result属性，详情请参考：https://uniapp.dcloud.net.cn/uniCloud/faq?id=promise"), {};
       }
-    }), a;
+    }), a.then(function (e) {
+      return "undefined" != typeof UTSJSONObject && (e.result = new UTSJSONObject(e.result)), e;
+    });
   };
 }
 On = "mp-weixin" !== P && "app" !== P ? /*#__PURE__*/function () {
@@ -7168,8 +7163,8 @@ var Jn = /*#__PURE__*/function () {
       var e = this;
       for (; e;) {
         var t = zn(e),
-          _n9 = zn(e.prevStage);
-        if ("aggregate" === t && "collection" === _n9 || "pipeline" === t) return !0;
+          _n10 = zn(e.prevStage);
+        if ("aggregate" === t && "collection" === _n10 || "pipeline" === t) return !0;
         e = e.prevStage;
       }
       return !1;
@@ -7190,8 +7185,8 @@ var Jn = /*#__PURE__*/function () {
       var e = this;
       for (; e;) {
         var t = zn(e),
-          _n10 = zn(e.prevStage);
-        if ("aggregate" === t && "command" === _n10) return !0;
+          _n11 = zn(e.prevStage);
+        if ("aggregate" === t && "command" === _n11) return !0;
         e = e.prevStage;
       }
       return !1;
@@ -7355,9 +7350,9 @@ var Qn = /*#__PURE__*/function (_ref44) {
         n = _ref45.multiCommand,
         s = _ref45.queryList;
       function r(e, t) {
-        if (n && s) for (var _n11 = 0; _n11 < s.length; _n11++) {
-          var _r6 = s[_n11];
-          _r6.udb && "function" == typeof _r6.udb.setResult && (t ? _r6.udb.setResult(t) : _r6.udb.setResult(e.result.dataList[_n11]));
+        if (n && s) for (var _n12 = 0; _n12 < s.length; _n12++) {
+          var _r7 = s[_n12];
+          _r7.udb && "function" == typeof _r7.udb.setResult && (t ? _r7.udb.setResult(t) : _r7.udb.setResult(e.result.dataList[_n12]));
         }
       }
       var i = this,
@@ -7395,11 +7390,11 @@ var Qn = /*#__PURE__*/function (_ref44) {
         if (u) for (var _e22 = 0; _e22 < u.length; _e22++) {
           var _u$_e = u[_e22],
             _t13 = _u$_e.level,
-            _n12 = _u$_e.message,
+            _n13 = _u$_e.message,
             _s14 = _u$_e.detail,
-            _r7 = console["app" === P && "warn" === _t13 ? "error" : _t13] || console.log;
-          var _i4 = "[System Info]" + _n12;
-          _s14 && (_i4 = "".concat(_i4, "\n\u8BE6\u7EC6\u4FE1\u606F\uFF1A").concat(_s14)), _r7(_i4);
+            _r8 = console["app" === P && "warn" === _t13 ? "error" : _t13] || console.log;
+          var _i4 = "[System Info]" + _n13;
+          _s14 && (_i4 = "".concat(_i4, "\n\u8BE6\u7EC6\u4FE1\u606F\uFF1A").concat(_s14)), _r8(_i4);
         }
         if (t) {
           return a(new te({
@@ -7706,7 +7701,7 @@ function _s() {
     s[e]({
       url: n
     });
-  });
+  }, 0);
 }
 function ws() {
   var _ref50 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
@@ -7921,6 +7916,7 @@ var Ts = n(function (e, t) {
               }) && n(t));
               var u = i[s];
               e.uploadFile({
+                provider: u.provider,
                 filePath: u.path,
                 cloudPath: u.cloudPath,
                 fileType: u.fileType,
@@ -8140,7 +8136,8 @@ function Os(e) {
         mixinDatacomHasMore: !1,
         mixinDatacomResData: [],
         mixinDatacomErrorMessage: "",
-        mixinDatacomPage: {}
+        mixinDatacomPage: {},
+        mixinDatacomError: null
       };
     },
     created: function created() {
@@ -8158,8 +8155,8 @@ function Os(e) {
         if (_this21.loadtime === xs) return;
         var n = !1;
         var s = [];
-        for (var _r8 = 2; _r8 < e.length; _r8++) {
-          e[_r8] !== t[_r8] && (s.push(e[_r8]), n = !0);
+        for (var _r9 = 2; _r9 < e.length; _r9++) {
+          e[_r9] !== t[_r9] && (s.push(e[_r9]), n = !0);
         }
         e[0] !== t[0] && (_this21.mixinDatacomPage.current = _this21.pageCurrent), _this21.mixinDatacomPage.size = _this21.pageSize, _this21.onMixinDatacomPropsChange(n, s);
       });
@@ -8173,7 +8170,7 @@ function Os(e) {
           e = _ref54$getone === void 0 ? !1 : _ref54$getone,
           t = _ref54.success,
           n = _ref54.fail;
-        this.mixinDatacomLoading || (this.mixinDatacomLoading = !0, this.mixinDatacomErrorMessage = "", this.mixinDatacomGet().then(function (n) {
+        this.mixinDatacomLoading || (this.mixinDatacomLoading = !0, this.mixinDatacomErrorMessage = "", this.mixinDatacomError = null, this.mixinDatacomGet().then(function (n) {
           _this22.mixinDatacomLoading = !1;
           var _n$result = n.result,
             s = _n$result.data,
@@ -8182,17 +8179,18 @@ function Os(e) {
           var i = e ? s.length ? s[0] : void 0 : s;
           _this22.mixinDatacomResData = i, t && t(i);
         }).catch(function (e) {
-          _this22.mixinDatacomLoading = !1, _this22.mixinDatacomErrorMessage = e, n && n(e);
+          _this22.mixinDatacomLoading = !1, _this22.mixinDatacomErrorMessage = e, _this22.mixinDatacomError = e, n && n(e);
         }));
       },
       mixinDatacomGet: function mixinDatacomGet() {
-        var _n13;
+        var _n14;
         var t = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-        var n = e.database(this.spaceInfo);
+        var n;
+        t = t || {}, n = "undefined" != typeof __uniX && __uniX ? e.databaseForJQL(this.spaceInfo) : e.database(this.spaceInfo);
         var s = t.action || this.action;
         s && (n = n.action(s));
         var r = t.collection || this.collection;
-        n = Array.isArray(r) ? (_n13 = n).collection.apply(_n13, (0, _toConsumableArray2.default)(r)) : n.collection(r);
+        n = Array.isArray(r) ? (_n14 = n).collection.apply(_n14, (0, _toConsumableArray2.default)(r)) : n.collection(r);
         var i = t.where || this.where;
         i && Object.keys(i).length && (n = n.where(i));
         var o = t.field || this.field;
@@ -8240,11 +8238,11 @@ function Es(e) {
         retry: !1
       }
     }, n);
-    var _n14 = n,
-      s = _n14.customUI,
-      r = _n14.loadingOptions,
-      i = _n14.errorOptions,
-      o = _n14.parseSystemError,
+    var _n15 = n,
+      s = _n15.customUI,
+      r = _n15.loadingOptions,
+      i = _n15.errorOptions,
+      o = _n15.parseSystemError,
       a = !s;
     return new Proxy({}, {
       get: function get(s, c) {
@@ -8335,7 +8333,7 @@ function Es(e) {
                 _e26,
                 _yield,
                 _t19,
-                _n15,
+                _n16,
                 _args4 = arguments;
               return _regenerator.default.wrap(function _callee54$(_context54) {
                 while (1) {
@@ -8481,16 +8479,16 @@ function Es(e) {
                       }
                       return _context54.abrupt("return", s.apply(void 0, h));
                     case 37:
-                      _n15 = new te({
+                      _n16 = new te({
                         subject: f,
                         code: g,
                         message: m,
                         requestId: l.requestId
                       });
-                      throw _n15.detail = l.result, Y(j, {
+                      throw _n16.detail = l.result, Y(j, {
                         type: z,
-                        content: _n15
-                      }), _n15;
+                        content: _n16
+                      }), _n16;
                     case 39:
                       return _context54.abrupt("return", (Y(j, {
                         type: z,
@@ -8609,7 +8607,11 @@ function _Us() {
         switch (_context58.prev = _context58.next) {
           case 0:
             t = Ls(this);
-            return _context58.abrupt("return", (t.initPromise || (t.initPromise = Rs.call(this, e)), t.initPromise));
+            return _context58.abrupt("return", (t.initPromise || (t.initPromise = Rs.call(this, e).then(function (e) {
+              return e;
+            }).catch(function (e) {
+              throw delete t.initPromise, e;
+            })), t.initPromise));
           case 2:
           case "end":
             return _context58.stop();
@@ -8810,8 +8812,8 @@ var Ms = /*#__PURE__*/function (_ref62) {
       var n = this._callback[e];
       if (!n) return;
       var s = function (e, t) {
-        for (var _n16 = e.length - 1; _n16 >= 0; _n16--) {
-          if (e[_n16] === t) return _n16;
+        for (var _n17 = e.length - 1; _n17 >= 0; _n17--) {
+          if (e[_n17] === t) return _n17;
         }
         return -1;
       }(n, t);
@@ -8905,7 +8907,7 @@ function _Fs() {
                 if (!e || "string" != typeof e) return 0;
                 var t = e.match(/^(\d+)./);
                 return t && t[1] ? parseInt(t[1]) : 0;
-              }(_t21) >= 14 && console.warn("iOS 14及以上版本连接uniCloud本地调试服务需要允许客户端查找并连接到本地网络上的设备（仅开发模式生效，发行模式会连接uniCloud云端服务）");
+              }(_t21) >= 14 && console.warn("iOS 14及以上版本连接uniCloud本地调试服务需要允许客户端查找并连接到本地网络上的设备（仅开发期间需要，发行后不需要）");
             }
             t = e.__dev__;
             if (t.debugInfo) {
@@ -8920,7 +8922,7 @@ function _Fs() {
             _context61.next = 11;
             return function () {
               var _ref73 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee60(e, t) {
-                var n, _s16, _r9;
+                var n, _s16, _r10;
                 return _regenerator.default.wrap(function _callee60$(_context60) {
                   while (1) {
                     switch (_context60.prev = _context60.next) {
@@ -8931,15 +8933,15 @@ function _Fs() {
                           _context60.next = 11;
                           break;
                         }
-                        _r9 = e[_s16];
+                        _r10 = e[_s16];
                         _context60.next = 5;
-                        return qs(_r9, t);
+                        return qs(_r10, t);
                       case 5:
                         if (!_context60.sent) {
                           _context60.next = 8;
                           break;
                         }
-                        n = _r9;
+                        n = _r10;
                         return _context60.abrupt("break", 11);
                       case 8:
                         _s16++;
@@ -9134,12 +9136,12 @@ var $s = new ( /*#__PURE__*/function () {
   var t = {};
   if (e && 1 === e.length) t = e[0], $s = $s.init(t), $s._isDefault = !0;else {
     var _t20 = ["auth", "callFunction", "uploadFile", "deleteFile", "getTempFileURL", "downloadFile", "database", "getCurrentUSerInfo", "importObject"];
-    var _n17;
-    _n17 = e && e.length > 0 ? "应用有多个服务空间，请通过uniCloud.init方法指定要使用的服务空间" : x ? "应用未关联服务空间，请在uniCloud目录右键关联服务空间" : "uni-app cli项目内使用uniCloud需要使用HBuilderX的运行菜单运行项目，且需要在uniCloud目录关联服务空间", _t20.forEach(function (e) {
+    var _n18;
+    _n18 = e && e.length > 0 ? "应用有多个服务空间，请通过uniCloud.init方法指定要使用的服务空间" : x ? "应用未关联服务空间，请在uniCloud目录右键关联服务空间" : "uni-app cli项目内使用uniCloud需要使用HBuilderX的运行菜单运行项目，且需要在uniCloud目录关联服务空间", _t20.forEach(function (e) {
       $s[e] = function () {
-        return console.error(_n17), Promise.reject(new te({
+        return console.error(_n18), Promise.reject(new te({
           code: "SYS_ERR",
-          message: _n17
+          message: _n18
         }));
       };
     });
@@ -9205,16 +9207,20 @@ module.exports = _wrapNativeSuper, module.exports.__esModule = true, module.expo
 /***/ (function(module, exports) {
 
 function _isNativeFunction(fn) {
-  return Function.toString.call(fn).indexOf("[native code]") !== -1;
+  try {
+    return Function.toString.call(fn).indexOf("[native code]") !== -1;
+  } catch (e) {
+    return typeof fn === "function";
+  }
 }
 module.exports = _isNativeFunction, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
 /***/ 187:
-/*!*************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/pages.json?{"type":"origin-pages-json"} ***!
-  \*************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/pages.json?{"type":"origin-pages-json"} ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9281,6 +9287,11 @@ var _default = {
     "style": {
       "navigationBarTitleText": "溯源管理"
     }
+  }, {
+    "path": "pages/admin/user",
+    "style": {
+      "navigationBarTitleText": "用户管理"
+    }
   }],
   "tabBar": {
     "color": "#bfbfbf",
@@ -9312,9 +9323,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 188:
-/*!************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/pages.json?{"type":"stat"} ***!
-  \************************************************************************/
+/*!*******************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/pages.json?{"type":"stat"} ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10084,8 +10095,8 @@ function populateParameters(result) {
     appVersion: "1.0.0",
     appVersionCode: "100",
     appLanguage: getAppLanguage(hostLanguage),
-    uniCompileVersion: "3.99",
-    uniRuntimeVersion: "3.99",
+    uniCompileVersion: "4.15",
+    uniRuntimeVersion: "4.15",
     uniPlatform: undefined || "mp-weixin",
     deviceBrand: deviceBrand,
     deviceModel: model,
@@ -12337,9 +12348,9 @@ module.exports = _classCallCheck, module.exports.__esModule = true, module.expor
 /***/ }),
 
 /***/ 238:
-/*!**************************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/index.js ***!
-  \**************************************************************************************************************************/
+/*!*********************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/index.js ***!
+  \*********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12364,9 +12375,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 239:
-/*!*************************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/en.json ***!
-  \*************************************************************************************************************************/
+/*!********************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/en.json ***!
+  \********************************************************************************************************************************/
 /*! exports provided: uni-datetime-picker.selectDate, uni-datetime-picker.selectTime, uni-datetime-picker.selectDateTime, uni-datetime-picker.startDate, uni-datetime-picker.endDate, uni-datetime-picker.startTime, uni-datetime-picker.endTime, uni-datetime-picker.ok, uni-datetime-picker.clear, uni-datetime-picker.cancel, uni-datetime-picker.year, uni-datetime-picker.month, uni-calender.MON, uni-calender.TUE, uni-calender.WED, uni-calender.THU, uni-calender.FRI, uni-calender.SAT, uni-calender.SUN, uni-calender.confirm, default */
 /***/ (function(module) {
 
@@ -12404,9 +12415,9 @@ module.exports = _createClass, module.exports.__esModule = true, module.exports[
 /***/ }),
 
 /***/ 240:
-/*!******************************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/zh-Hans.json ***!
-  \******************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/zh-Hans.json ***!
+  \*************************************************************************************************************************************/
 /*! exports provided: uni-datetime-picker.selectDate, uni-datetime-picker.selectTime, uni-datetime-picker.selectDateTime, uni-datetime-picker.startDate, uni-datetime-picker.endDate, uni-datetime-picker.startTime, uni-datetime-picker.endTime, uni-datetime-picker.ok, uni-datetime-picker.clear, uni-datetime-picker.cancel, uni-datetime-picker.year, uni-datetime-picker.month, uni-calender.SUN, uni-calender.MON, uni-calender.TUE, uni-calender.WED, uni-calender.THU, uni-calender.FRI, uni-calender.SAT, uni-calender.confirm, default */
 /***/ (function(module) {
 
@@ -12415,9 +12426,9 @@ module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"选择日期\
 /***/ }),
 
 /***/ 241:
-/*!******************************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/zh-Hant.json ***!
-  \******************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/zh-Hant.json ***!
+  \*************************************************************************************************************************************/
 /*! exports provided: uni-datetime-picker.selectDate, uni-datetime-picker.selectTime, uni-datetime-picker.selectDateTime, uni-datetime-picker.startDate, uni-datetime-picker.endDate, uni-datetime-picker.startTime, uni-datetime-picker.endTime, uni-datetime-picker.ok, uni-datetime-picker.clear, uni-datetime-picker.cancel, uni-datetime-picker.year, uni-datetime-picker.month, uni-calender.SUN, uni-calender.MON, uni-calender.TUE, uni-calender.WED, uni-calender.THU, uni-calender.FRI, uni-calender.SAT, uni-calender.confirm, default */
 /***/ (function(module) {
 
@@ -12426,9 +12437,9 @@ module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"選擇日期\
 /***/ }),
 
 /***/ 242:
-/*!********************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/util.js ***!
-  \********************************************************************************************************************/
+/*!***************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/util.js ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18958,9 +18969,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 250:
-/*!*************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-icons/components/uni-icons/uniicons_file_vue.js ***!
-  \*************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-icons/components/uni-icons/uniicons_file_vue.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19462,9 +19473,9 @@ exports.fontData = fontData;
 /***/ }),
 
 /***/ 26:
-/*!********************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/pages.json ***!
-  \********************************************************/
+/*!***************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/pages.json ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -19473,9 +19484,9 @@ exports.fontData = fontData;
 /***/ }),
 
 /***/ 265:
-/*!**************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
-  \**************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19500,9 +19511,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 266:
-/*!*************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
-  \*************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
+  \********************************************************************************************************************/
 /*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
 /***/ (function(module) {
 
@@ -19511,9 +19522,9 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show mo
 /***/ }),
 
 /***/ 267:
-/*!******************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
-  \******************************************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
+  \*************************************************************************************************************************/
 /*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
 /***/ (function(module) {
 
@@ -19522,9 +19533,9 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多
 /***/ }),
 
 /***/ 268:
-/*!******************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
-  \******************************************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
+  \*************************************************************************************************************************/
 /*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
 /***/ (function(module) {
 
@@ -19533,9 +19544,9 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多
 /***/ }),
 
 /***/ 283:
-/*!*********************************************************************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
-  \*********************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19857,310 +19868,310 @@ function _regeneratorRuntime() {
 
   /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
   module.exports = _regeneratorRuntime = function _regeneratorRuntime() {
-    return exports;
+    return e;
   }, module.exports.__esModule = true, module.exports["default"] = module.exports;
-  var exports = {},
-    Op = Object.prototype,
-    hasOwn = Op.hasOwnProperty,
-    defineProperty = Object.defineProperty || function (obj, key, desc) {
-      obj[key] = desc.value;
+  var t,
+    e = {},
+    r = Object.prototype,
+    n = r.hasOwnProperty,
+    o = Object.defineProperty || function (t, e, r) {
+      t[e] = r.value;
     },
-    $Symbol = "function" == typeof Symbol ? Symbol : {},
-    iteratorSymbol = $Symbol.iterator || "@@iterator",
-    asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator",
-    toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
-  function define(obj, key, value) {
-    return Object.defineProperty(obj, key, {
-      value: value,
+    i = "function" == typeof Symbol ? Symbol : {},
+    a = i.iterator || "@@iterator",
+    c = i.asyncIterator || "@@asyncIterator",
+    u = i.toStringTag || "@@toStringTag";
+  function define(t, e, r) {
+    return Object.defineProperty(t, e, {
+      value: r,
       enumerable: !0,
       configurable: !0,
       writable: !0
-    }), obj[key];
+    }), t[e];
   }
   try {
     define({}, "");
-  } catch (err) {
-    define = function define(obj, key, value) {
-      return obj[key] = value;
+  } catch (t) {
+    define = function define(t, e, r) {
+      return t[e] = r;
     };
   }
-  function wrap(innerFn, outerFn, self, tryLocsList) {
-    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator,
-      generator = Object.create(protoGenerator.prototype),
-      context = new Context(tryLocsList || []);
-    return defineProperty(generator, "_invoke", {
-      value: makeInvokeMethod(innerFn, self, context)
-    }), generator;
+  function wrap(t, e, r, n) {
+    var i = e && e.prototype instanceof Generator ? e : Generator,
+      a = Object.create(i.prototype),
+      c = new Context(n || []);
+    return o(a, "_invoke", {
+      value: makeInvokeMethod(t, r, c)
+    }), a;
   }
-  function tryCatch(fn, obj, arg) {
+  function tryCatch(t, e, r) {
     try {
       return {
         type: "normal",
-        arg: fn.call(obj, arg)
+        arg: t.call(e, r)
       };
-    } catch (err) {
+    } catch (t) {
       return {
         type: "throw",
-        arg: err
+        arg: t
       };
     }
   }
-  exports.wrap = wrap;
-  var ContinueSentinel = {};
+  e.wrap = wrap;
+  var h = "suspendedStart",
+    l = "suspendedYield",
+    f = "executing",
+    s = "completed",
+    y = {};
   function Generator() {}
   function GeneratorFunction() {}
   function GeneratorFunctionPrototype() {}
-  var IteratorPrototype = {};
-  define(IteratorPrototype, iteratorSymbol, function () {
+  var p = {};
+  define(p, a, function () {
     return this;
   });
-  var getProto = Object.getPrototypeOf,
-    NativeIteratorPrototype = getProto && getProto(getProto(values([])));
-  NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype);
-  var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
-  function defineIteratorMethods(prototype) {
-    ["next", "throw", "return"].forEach(function (method) {
-      define(prototype, method, function (arg) {
-        return this._invoke(method, arg);
+  var d = Object.getPrototypeOf,
+    v = d && d(d(values([])));
+  v && v !== r && n.call(v, a) && (p = v);
+  var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p);
+  function defineIteratorMethods(t) {
+    ["next", "throw", "return"].forEach(function (e) {
+      define(t, e, function (t) {
+        return this._invoke(e, t);
       });
     });
   }
-  function AsyncIterator(generator, PromiseImpl) {
-    function invoke(method, arg, resolve, reject) {
-      var record = tryCatch(generator[method], generator, arg);
-      if ("throw" !== record.type) {
-        var result = record.arg,
-          value = result.value;
-        return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) {
-          invoke("next", value, resolve, reject);
-        }, function (err) {
-          invoke("throw", err, resolve, reject);
-        }) : PromiseImpl.resolve(value).then(function (unwrapped) {
-          result.value = unwrapped, resolve(result);
-        }, function (error) {
-          return invoke("throw", error, resolve, reject);
+  function AsyncIterator(t, e) {
+    function invoke(r, o, i, a) {
+      var c = tryCatch(t[r], t, o);
+      if ("throw" !== c.type) {
+        var u = c.arg,
+          h = u.value;
+        return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) {
+          invoke("next", t, i, a);
+        }, function (t) {
+          invoke("throw", t, i, a);
+        }) : e.resolve(h).then(function (t) {
+          u.value = t, i(u);
+        }, function (t) {
+          return invoke("throw", t, i, a);
         });
       }
-      reject(record.arg);
+      a(c.arg);
     }
-    var previousPromise;
-    defineProperty(this, "_invoke", {
-      value: function value(method, arg) {
+    var r;
+    o(this, "_invoke", {
+      value: function value(t, n) {
         function callInvokeWithMethodAndArg() {
-          return new PromiseImpl(function (resolve, reject) {
-            invoke(method, arg, resolve, reject);
+          return new e(function (e, r) {
+            invoke(t, n, e, r);
           });
         }
-        return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
+        return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
       }
     });
   }
-  function makeInvokeMethod(innerFn, self, context) {
-    var state = "suspendedStart";
-    return function (method, arg) {
-      if ("executing" === state) throw new Error("Generator is already running");
-      if ("completed" === state) {
-        if ("throw" === method) throw arg;
-        return doneResult();
+  function makeInvokeMethod(e, r, n) {
+    var o = h;
+    return function (i, a) {
+      if (o === f) throw Error("Generator is already running");
+      if (o === s) {
+        if ("throw" === i) throw a;
+        return {
+          value: t,
+          done: !0
+        };
       }
-      for (context.method = method, context.arg = arg;;) {
-        var delegate = context.delegate;
-        if (delegate) {
-          var delegateResult = maybeInvokeDelegate(delegate, context);
-          if (delegateResult) {
-            if (delegateResult === ContinueSentinel) continue;
-            return delegateResult;
+      for (n.method = i, n.arg = a;;) {
+        var c = n.delegate;
+        if (c) {
+          var u = maybeInvokeDelegate(c, n);
+          if (u) {
+            if (u === y) continue;
+            return u;
           }
         }
-        if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) {
-          if ("suspendedStart" === state) throw state = "completed", context.arg;
-          context.dispatchException(context.arg);
-        } else "return" === context.method && context.abrupt("return", context.arg);
-        state = "executing";
-        var record = tryCatch(innerFn, self, context);
-        if ("normal" === record.type) {
-          if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue;
+        if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) {
+          if (o === h) throw o = s, n.arg;
+          n.dispatchException(n.arg);
+        } else "return" === n.method && n.abrupt("return", n.arg);
+        o = f;
+        var p = tryCatch(e, r, n);
+        if ("normal" === p.type) {
+          if (o = n.done ? s : l, p.arg === y) continue;
           return {
-            value: record.arg,
-            done: context.done
+            value: p.arg,
+            done: n.done
           };
         }
-        "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg);
+        "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg);
       }
     };
   }
-  function maybeInvokeDelegate(delegate, context) {
-    var methodName = context.method,
-      method = delegate.iterator[methodName];
-    if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel;
-    var record = tryCatch(method, delegate.iterator, context.arg);
-    if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel;
-    var info = record.arg;
-    return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel);
+  function maybeInvokeDelegate(e, r) {
+    var n = r.method,
+      o = e.iterator[n];
+    if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y;
+    var i = tryCatch(o, e.iterator, r.arg);
+    if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y;
+    var a = i.arg;
+    return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y);
   }
-  function pushTryEntry(locs) {
-    var entry = {
-      tryLoc: locs[0]
+  function pushTryEntry(t) {
+    var e = {
+      tryLoc: t[0]
     };
-    1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry);
+    1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e);
   }
-  function resetTryEntry(entry) {
-    var record = entry.completion || {};
-    record.type = "normal", delete record.arg, entry.completion = record;
+  function resetTryEntry(t) {
+    var e = t.completion || {};
+    e.type = "normal", delete e.arg, t.completion = e;
   }
-  function Context(tryLocsList) {
+  function Context(t) {
     this.tryEntries = [{
       tryLoc: "root"
-    }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0);
+    }], t.forEach(pushTryEntry, this), this.reset(!0);
   }
-  function values(iterable) {
-    if (iterable) {
-      var iteratorMethod = iterable[iteratorSymbol];
-      if (iteratorMethod) return iteratorMethod.call(iterable);
-      if ("function" == typeof iterable.next) return iterable;
-      if (!isNaN(iterable.length)) {
-        var i = -1,
-          next = function next() {
-            for (; ++i < iterable.length;) {
-              if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next;
+  function values(e) {
+    if (e || "" === e) {
+      var r = e[a];
+      if (r) return r.call(e);
+      if ("function" == typeof e.next) return e;
+      if (!isNaN(e.length)) {
+        var o = -1,
+          i = function next() {
+            for (; ++o < e.length;) {
+              if (n.call(e, o)) return next.value = e[o], next.done = !1, next;
             }
-            return next.value = undefined, next.done = !0, next;
+            return next.value = t, next.done = !0, next;
           };
-        return next.next = next;
+        return i.next = i;
       }
     }
-    return {
-      next: doneResult
-    };
+    throw new TypeError(_typeof(e) + " is not iterable");
   }
-  function doneResult() {
-    return {
-      value: undefined,
-      done: !0
-    };
-  }
-  return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", {
+  return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", {
     value: GeneratorFunctionPrototype,
     configurable: !0
-  }), defineProperty(GeneratorFunctionPrototype, "constructor", {
+  }), o(GeneratorFunctionPrototype, "constructor", {
     value: GeneratorFunction,
     configurable: !0
-  }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) {
-    var ctor = "function" == typeof genFun && genFun.constructor;
-    return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name));
-  }, exports.mark = function (genFun) {
-    return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun;
-  }, exports.awrap = function (arg) {
+  }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
+    var e = "function" == typeof t && t.constructor;
+    return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name));
+  }, e.mark = function (t) {
+    return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t;
+  }, e.awrap = function (t) {
     return {
-      __await: arg
+      __await: t
     };
-  }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () {
+  }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () {
     return this;
-  }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) {
-    void 0 === PromiseImpl && (PromiseImpl = Promise);
-    var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl);
-    return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) {
-      return result.done ? result.value : iter.next();
+  }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) {
+    void 0 === i && (i = Promise);
+    var a = new AsyncIterator(wrap(t, r, n, o), i);
+    return e.isGeneratorFunction(r) ? a : a.next().then(function (t) {
+      return t.done ? t.value : a.next();
     });
-  }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () {
+  }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () {
     return this;
-  }), define(Gp, "toString", function () {
+  }), define(g, "toString", function () {
     return "[object Generator]";
-  }), exports.keys = function (val) {
-    var object = Object(val),
-      keys = [];
-    for (var key in object) {
-      keys.push(key);
+  }), e.keys = function (t) {
+    var e = Object(t),
+      r = [];
+    for (var n in e) {
+      r.push(n);
     }
-    return keys.reverse(), function next() {
-      for (; keys.length;) {
-        var key = keys.pop();
-        if (key in object) return next.value = key, next.done = !1, next;
+    return r.reverse(), function next() {
+      for (; r.length;) {
+        var t = r.pop();
+        if (t in e) return next.value = t, next.done = !1, next;
       }
       return next.done = !0, next;
     };
-  }, exports.values = values, Context.prototype = {
+  }, e.values = values, Context.prototype = {
     constructor: Context,
-    reset: function reset(skipTempReset) {
-      if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) {
-        "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined);
+    reset: function reset(e) {
+      if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) {
+        "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t);
       }
     },
     stop: function stop() {
       this.done = !0;
-      var rootRecord = this.tryEntries[0].completion;
-      if ("throw" === rootRecord.type) throw rootRecord.arg;
+      var t = this.tryEntries[0].completion;
+      if ("throw" === t.type) throw t.arg;
       return this.rval;
     },
-    dispatchException: function dispatchException(exception) {
-      if (this.done) throw exception;
-      var context = this;
-      function handle(loc, caught) {
-        return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught;
+    dispatchException: function dispatchException(e) {
+      if (this.done) throw e;
+      var r = this;
+      function handle(n, o) {
+        return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o;
       }
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i],
-          record = entry.completion;
-        if ("root" === entry.tryLoc) return handle("end");
-        if (entry.tryLoc <= this.prev) {
-          var hasCatch = hasOwn.call(entry, "catchLoc"),
-            hasFinally = hasOwn.call(entry, "finallyLoc");
-          if (hasCatch && hasFinally) {
-            if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0);
-            if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc);
-          } else if (hasCatch) {
-            if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0);
+      for (var o = this.tryEntries.length - 1; o >= 0; --o) {
+        var i = this.tryEntries[o],
+          a = i.completion;
+        if ("root" === i.tryLoc) return handle("end");
+        if (i.tryLoc <= this.prev) {
+          var c = n.call(i, "catchLoc"),
+            u = n.call(i, "finallyLoc");
+          if (c && u) {
+            if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
+            if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
+          } else if (c) {
+            if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
           } else {
-            if (!hasFinally) throw new Error("try statement without catch or finally");
-            if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc);
+            if (!u) throw Error("try statement without catch or finally");
+            if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
           }
         }
       }
     },
-    abrupt: function abrupt(type, arg) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
-          var finallyEntry = entry;
+    abrupt: function abrupt(t, e) {
+      for (var r = this.tryEntries.length - 1; r >= 0; --r) {
+        var o = this.tryEntries[r];
+        if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) {
+          var i = o;
           break;
         }
       }
-      finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null);
-      var record = finallyEntry ? finallyEntry.completion : {};
-      return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record);
+      i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null);
+      var a = i ? i.completion : {};
+      return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a);
     },
-    complete: function complete(record, afterLoc) {
-      if ("throw" === record.type) throw record.arg;
-      return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel;
+    complete: function complete(t, e) {
+      if ("throw" === t.type) throw t.arg;
+      return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y;
     },
-    finish: function finish(finallyLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel;
+    finish: function finish(t) {
+      for (var e = this.tryEntries.length - 1; e >= 0; --e) {
+        var r = this.tryEntries[e];
+        if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y;
       }
     },
-    "catch": function _catch(tryLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc === tryLoc) {
-          var record = entry.completion;
-          if ("throw" === record.type) {
-            var thrown = record.arg;
-            resetTryEntry(entry);
+    "catch": function _catch(t) {
+      for (var e = this.tryEntries.length - 1; e >= 0; --e) {
+        var r = this.tryEntries[e];
+        if (r.tryLoc === t) {
+          var n = r.completion;
+          if ("throw" === n.type) {
+            var o = n.arg;
+            resetTryEntry(r);
           }
-          return thrown;
+          return o;
         }
       }
-      throw new Error("illegal catch attempt");
+      throw Error("illegal catch attempt");
     },
-    delegateYield: function delegateYield(iterable, resultName, nextLoc) {
+    delegateYield: function delegateYield(e, r, n) {
       return this.delegate = {
-        iterator: values(iterable),
-        resultName: resultName,
-        nextLoc: nextLoc
-      }, "next" === this.method && (this.arg = undefined), ContinueSentinel;
+        iterator: values(e),
+        resultName: r,
+        nextLoc: n
+      }, "next" === this.method && (this.arg = t), y;
     }
-  }, exports;
+  }, e;
 }
 module.exports = _regeneratorRuntime, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -20224,9 +20235,9 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
 /***/ }),
 
 /***/ 40:
-/*!**********************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/api/index.js ***!
-  \**********************************************************/
+/*!*****************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/api/index.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20242,9 +20253,11 @@ exports.addProApi = addProApi;
 exports.addSmjlApi = addSmjlApi;
 exports.addSyApi = addSyApi;
 exports.addSypjApi = addSypjApi;
+exports.addUserApi = addUserApi;
 exports.delFarmApi = delFarmApi;
 exports.delProApi = delProApi;
 exports.delSyApi = delSyApi;
+exports.delUserApi = delUserApi;
 exports.getFarmAllApi = getFarmAllApi;
 exports.getFarmAllByIdApi = getFarmAllByIdApi;
 exports.getProAllApi = getProAllApi;
@@ -20254,12 +20267,14 @@ exports.getSyAllApi = getSyAllApi;
 exports.getSyInfoApi = getSyInfoApi;
 exports.getSypjAllByIdApi = getSypjAllByIdApi;
 exports.getSypjApi = getSypjApi;
+exports.getUserAllApi = getUserAllApi;
 exports.getUserInfoApi = getUserInfoApi;
 exports.loginApi = loginApi;
 exports.registerApi = registerApi;
 exports.uppFarmApi = uppFarmApi;
 exports.uppProApi = uppProApi;
 exports.uppSyApi = uppSyApi;
+exports.uppUserApi = uppUserApi;
 exports.uppUserInfoApi = uppUserInfoApi;
 var _request = _interopRequireDefault(__webpack_require__(/*! @/utils/request */ 41));
 // 引用网络请求中间件
@@ -20326,7 +20341,7 @@ function addSypjApi(data) {
 }
 function getSypjAllByIdApi(id) {
   return (0, _request.default)({
-    url: '/api/sypj/selectAll/' + id,
+    url: '/api/sypj/getAll/' + id,
     method: 'GET'
   });
 }
@@ -20420,13 +20435,39 @@ function delSyApi(id) {
     method: 'GET'
   });
 }
+function getUserAllApi() {
+  return (0, _request.default)({
+    url: '/api/user/getAll',
+    method: 'GET'
+  });
+}
+function delUserApi(id) {
+  return (0, _request.default)({
+    url: '/api/user/del/' + id,
+    method: 'GET'
+  });
+}
+function uppUserApi(data) {
+  return (0, _request.default)({
+    url: '/api/user/upp',
+    method: 'POST',
+    data: data
+  });
+}
+function addUserApi(data) {
+  return (0, _request.default)({
+    url: '/api/user/add',
+    method: 'POST',
+    data: data
+  });
+}
 
 /***/ }),
 
 /***/ 41:
-/*!**************************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/utils/request.js ***!
-  \**************************************************************/
+/*!*********************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/utils/request.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20495,9 +20536,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 42:
-/*!**********************************************************!*\
-  !*** C:/Users/H/Desktop/code/suyuan/uniapp/utils/evn.js ***!
-  \**********************************************************/
+/*!*****************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/utils/evn.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20509,7 +20550,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _default = {
-  baseUrl: 'http://localhost:8088'
+  baseUrl: 'http://192.168.3.63:8088'
 };
 exports.default = _default;
 
@@ -21682,33 +21723,33 @@ if (typeof Object.create === 'function') {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _iterableToArrayLimit(arr, i) {
-  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
-  if (null != _i) {
-    var _s,
-      _e,
-      _x,
-      _r,
-      _arr = [],
-      _n = !0,
-      _d = !1;
+function _iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
     try {
-      if (_x = (_i = _i.call(arr)).next, 0 === i) {
-        if (Object(_i) !== _i) return;
-        _n = !1;
-      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0) {
+      if (i = (t = t.call(r)).next, 0 === l) {
+        if (Object(t) !== t) return;
+        f = !1;
+      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0) {
         ;
       }
-    } catch (err) {
-      _d = !0, _e = err;
+    } catch (r) {
+      o = !0, n = r;
     } finally {
       try {
-        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
+        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
       } finally {
-        if (_d) throw _e;
+        if (o) throw n;
       }
     }
-    return _arr;
+    return a;
   }
 }
 module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;

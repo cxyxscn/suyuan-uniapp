@@ -52,13 +52,10 @@
 								:localdata="range"></uni-data-select>
 						</uni-forms-item>
 
-						<uni-forms-item>
+						<view class="btn-box">
 							<button type="primary" @click="addFarm">提交</button>
-						</uni-forms-item>
-
-						<uni-forms-item>
 							<button @click="close" type="primary">关闭</button>
-						</uni-forms-item>
+						</view>
 					</uni-forms>
 				</view>
 			</uni-section>

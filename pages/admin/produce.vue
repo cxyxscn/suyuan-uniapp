@@ -44,7 +44,7 @@
 						</uni-td>
 					</uni-tr>
 				</uni-table>
-				
+
 				<view style="margin-top: 40rpx;">
 					<button @click="open" type="primary">添加产品</button>
 				</view>
@@ -87,13 +87,10 @@
 								:clear="false"></uni-data-select>
 						</uni-forms-item>
 
-						<uni-forms-item>
+						<view class="btn-box">
 							<button type="primary" @click="addPro">提交</button>
-						</uni-forms-item>
-
-						<uni-forms-item>
 							<button type="primary" @click="close">关闭</button>
-						</uni-forms-item>
+						</view>
 
 					</uni-forms>
 				</view>

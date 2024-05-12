@@ -51,13 +51,10 @@
 							<uni-easyinput v-model="syFormData.markAddress" placeholder="请输入市场地址" />
 						</uni-forms-item>
 
-						<uni-forms-item>
+						<view class="btn-box">
 							<button type="primary" @click="addSy">提交</button>
-						</uni-forms-item>
-
-						<uni-forms-item>
 							<button class="uni-mt-8" @click="close" type="primary">关闭</button>
-						</uni-forms-item>
+						</view>
 					</uni-forms>
 				</view>
 			</uni-section>

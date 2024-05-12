@@ -1,12 +1,12 @@
 import env from '@/utils/evn.js';
 
 function service(options = {}) {
-	options.url = `${env.baseUrl}${options.url}`;
+	options.url = `${env.baseUrl}${options.url}`
 
 	options.header = {
 		'content-type': 'application/json',
-	};
-
+	}
+	
 	// resolved是返回成功数据，rejected返回错误数据
 	return new Promise((resolved, rejected) => {
 		uni.showLoading({

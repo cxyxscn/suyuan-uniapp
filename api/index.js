@@ -72,7 +72,7 @@ export function addSypjApi(data) {
 
 export function getSypjAllByIdApi(id) {
 	return request({
-		url: '/api/sypj/selectAll/' + id,
+		url: '/api/sypj/getAll/' + id,
 		method: 'GET'
 	});
 }
@@ -179,5 +179,36 @@ export function delSyApi(id) {
 	return request({
 		url: '/api/ncpsy/del/' + id,
 		method: 'GET'
+	});
+}
+
+export function getUserAllApi() {
+	return request({
+		url: '/api/user/getAll',
+		method: 'GET'
+	});
+}
+
+export function delUserApi(id) {
+	return request({
+		url: '/api/user/del/' + id,
+		method: 'GET'
+	});
+}
+
+
+export function uppUserApi(data) {
+	return request({
+		url: '/api/user/upp',
+		method: 'POST',
+		data
+	});
+}
+
+export function addUserApi(data) {
+	return request({
+		url: '/api/user/add',
+		method: 'POST',
+		data
 	});
 }

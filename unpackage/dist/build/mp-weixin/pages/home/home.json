@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "首页",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "uni-card": "/uni_modules/uni-card/components/uni-card/uni-card"
-  }
-}
