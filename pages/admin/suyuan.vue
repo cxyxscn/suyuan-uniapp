@@ -4,23 +4,30 @@
 			<view class="allSy">
 				<uni-table border>
 					<uni-tr>
-						<uni-th width="100" align="center">ID</uni-th>
-						<uni-th width="100" align="center">产品名称</uni-th>
-						<uni-th width="200" align="center">市场名称</uni-th>
-						<uni-th width="200" align="center">市场地址</uni-th>
-						<uni-th width="100" align="center">二维码</uni-th>
-						<uni-th width="100" align="center">操作</uni-th>
+						<uni-th width="100" align="center">溯源ID</uni-th>
+						<uni-th width="100" align="center">农产品ID</uni-th>
+						<uni-th width="100" align="center">农产品名称</uni-th>
+						<uni-th width="200" align="center">菜市场名称</uni-th>
+						<uni-th width="200" align="center">菜市场负责人</uni-th>
+						<uni-th width="200" align="center">菜市场电话</uni-th>
+						<uni-th width="200" align="center">菜市场地址</uni-th>
+						<uni-th width="100" align="center">溯源二维码</uni-th>
+						<uni-th width="150" align="center">操作</uni-th>
 					</uni-tr>
 					<!-- 表格数据行 -->
 					<uni-tr v-for="(item,index) in sys" :key="index">
 						<uni-td align="center">{{item.id}}</uni-td>
+						<uni-td align="center">{{item.produceId}}</uni-td>
 						<uni-td align="center">{{item.produceName}}</uni-td>
 						<uni-td align="center">{{item.markName}}</uni-td>
+						<uni-td align="center">{{item.markerName}}</uni-td>
+						<uni-td align="center">{{item.markerPhone}}</uni-td>
 						<uni-td align="center">{{item.markAddress}}</uni-td>
 						<uni-td align="center">
 							<text @click="openEwm(baseUrl + item.ewm)">查看二维码</text>
 						</uni-td>
 						<uni-td align="center">
+							<text @click="download(baseUrl + item.ewm)" style="padding: 0 10rpx;">下载</text>
 							<text @click="edite(item)" style="padding: 0 10rpx;">编辑</text>
 							<text @click="del(item.id)" style="padding: 0 10rpx;">删除</text>
 						</uni-td>
@@ -28,7 +35,7 @@
 				</uni-table>
 
 				<view style="margin-top: 40rpx;">
-					<button @click="open" type="primary">添加产品</button>
+					<button @click="open" type="primary">添加农产品溯源</button>
 				</view>
 			</view>
 		</uni-section>
@@ -44,11 +51,11 @@
 						</uni-forms-item>
 
 						<uni-forms-item label="市场名称" required name="markName">
-							<uni-easyinput v-model="syFormData.markName" placeholder="请输入市场名称" />
+							<uni-easyinput v-model="syFormData.markName" placeholder="请输入菜市场名称" />
 						</uni-forms-item>
 
 						<uni-forms-item label="市场地址" required name="markAddress">
-							<uni-easyinput v-model="syFormData.markAddress" placeholder="请输入市场地址" />
+							<uni-easyinput v-model="syFormData.markAddress" placeholder="请输入菜市场地址" />
 						</uni-forms-item>
 
 						<view class="btn-box">
@@ -104,6 +111,7 @@
 					},
 				},
 				syFormData: {
+					markerId: uni.getStorageSync("uid"),
 					markAddress: "",
 					markName: "",
 					produceId: null,
@@ -149,6 +157,24 @@
 						}
 					}
 				})
+			},
+			download(url) {
+				uni.downloadFile({
+					url,
+					success: (res) => {
+						if (res.statusCode === 200) {
+							uni.saveImageToPhotosAlbum({
+								filePath: res.tempFilePath,
+								success: function() {
+									uni.showToast({
+										icon: 'none',
+										title: '二维码保存成功'
+									})
+								}
+							});
+						}
+					}
+				});
 			},
 			async getSyAll() {
 				const res = await getSyAllApi()

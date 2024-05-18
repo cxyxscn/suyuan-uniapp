@@ -19,7 +19,7 @@
 						<uni-td align="center">
 							<text v-if="item.userRole===0">普通用户</text>
 							<text v-if="item.userRole===1">农场管理员</text>
-							<text v-if="item.userRole===2">市场管理员</text>
+							<text v-if="item.userRole===2">菜市场管理员</text>
 							<text v-if="item.userRole===3">系统管理员</text>
 						</uni-td>
 						<uni-td align="center">
@@ -128,7 +128,7 @@
 					},
 					{
 						value: 2,
-						text: "市场管理员"
+						text: "菜市场管理员"
 					},
 					{
 						value: 3,

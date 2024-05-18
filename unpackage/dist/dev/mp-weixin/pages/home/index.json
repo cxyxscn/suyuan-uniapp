@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "首页",
+  "navigationBarTitleText": "农产品溯源",
   "usingComponents": {
     "uni-card": "/uni_modules/uni-card/components/uni-card/uni-card"
   }

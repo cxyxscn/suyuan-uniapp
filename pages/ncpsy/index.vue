@@ -10,13 +10,13 @@
 				<uni-list-item title="出园时间" :rightText="getTime(info.endTime)" />
 				<uni-list-item title="农场名称" :rightText="info.farmName" />
 				<uni-list-item title="农场位置" :rightText="info.farmLocation" />
-				<uni-list-item title="农村负责" :rightText="info.farmer" />
+				<uni-list-item title="农场负责人" :rightText="info.farmer" />
 				<uni-list-item title="农场电话" :rightText="info.farmerPhone" />
 				<uni-list-item title="农场消毒" :rightText="info.farmStatus==0?'是':'否'" />
-				<uni-list-item title="市场名称" :rightText="info.markName" />
-				<uni-list-item title="市场负责" :rightText="info.marker" />
-				<uni-list-item title="市场电话" :rightText="info.markerPhone" />
-				<uni-list-item title="市场地址" :rightText="info.markAddress" />
+				<uni-list-item title="菜市场名称" :rightText="info.markName" />
+				<uni-list-item title="菜市场负责人" :rightText="info.marker" />
+				<uni-list-item title="菜市场电话" :rightText="info.markerPhone" />
+				<uni-list-item title="菜市场地址" :rightText="info.markAddress" />
 			</uni-list>
 		</uni-section>
 

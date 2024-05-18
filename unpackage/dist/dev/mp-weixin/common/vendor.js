@@ -101,7 +101,27 @@ module.exports = toPropertyKey, module.exports.__esModule = true, module.exports
 
 /***/ }),
 
-/***/ 129:
+/***/ 13:
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
+}
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 137:
 /*!***********************************************************************************************************!*\
   !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-forms/components/uni-forms/validate.js ***!
   \***********************************************************************************************************/
@@ -117,9 +137,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 37));
-var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ 130));
-var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ 131));
-var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ 133));
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ 138));
+var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ 139));
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ 141));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 39));
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ 23));
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ 24));
@@ -793,27 +813,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 13:
-/*!*******************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _typeof(o) {
-  "@babel/helpers - typeof";
-
-  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
-}
-module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ 130:
+/***/ 138:
 /*!*********************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
   \*********************************************************/
@@ -841,7 +841,7 @@ module.exports = _inherits, module.exports.__esModule = true, module.exports["de
 
 /***/ }),
 
-/***/ 131:
+/***/ 139:
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
   \**************************************************************************/
@@ -849,7 +849,7 @@ module.exports = _inherits, module.exports.__esModule = true, module.exports["de
 /***/ (function(module, exports, __webpack_require__) {
 
 var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
-var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized.js */ 132);
+var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized.js */ 140);
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
     return call;
@@ -862,7 +862,29 @@ module.exports = _possibleConstructorReturn, module.exports.__esModule = true, m
 
 /***/ }),
 
-/***/ 132:
+/***/ 14:
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toPrimitive.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
+function toPrimitive(t, r) {
+  if ("object" != _typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != _typeof(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 140:
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
   \**********************************************************************/
@@ -879,7 +901,7 @@ module.exports = _assertThisInitialized, module.exports.__esModule = true, modul
 
 /***/ }),
 
-/***/ 133:
+/***/ 141:
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
   \***************************************************************/
@@ -896,7 +918,7 @@ module.exports = _getPrototypeOf, module.exports.__esModule = true, module.expor
 
 /***/ }),
 
-/***/ 134:
+/***/ 142:
 /*!********************************************************************************************************!*\
   !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-forms/components/uni-forms/utils.js ***!
   \********************************************************************************************************/
@@ -1232,28 +1254,6 @@ exports.isEqual = isEqual;
 
 /***/ }),
 
-/***/ 14:
-/*!************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/toPrimitive.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
-function toPrimitive(t, r) {
-  if ("object" != _typeof(t) || !t) return t;
-  var e = t[Symbol.toPrimitive];
-  if (void 0 !== e) {
-    var i = e.call(t, r || "default");
-    if ("object" != _typeof(i)) return i;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return ("string" === r ? String : Number)(t);
-}
-module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
 /***/ 15:
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/construct.js ***!
@@ -1329,7 +1329,22 @@ module.exports = _toConsumableArray, module.exports.__esModule = true, module.ex
 
 /***/ }),
 
-/***/ 184:
+/***/ 19:
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ 9);
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+}
+module.exports = _arrayWithoutHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 192:
 /*!************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js ***!
   \************************************************************************************/
@@ -1345,19 +1360,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 37));
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ 132));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ 140));
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ 5));
 var _typeof2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/typeof */ 13));
 var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ 18));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 39));
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
-var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ 130));
-var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ 131));
-var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ 133));
-var _wrapNativeSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/wrapNativeSuper */ 185));
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ 138));
+var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ 139));
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ 141));
+var _wrapNativeSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/wrapNativeSuper */ 193));
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ 23));
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ 24));
-var _pages = _interopRequireDefault(__webpack_require__(/*! @/pages.json */ 187));
+var _pages = _interopRequireDefault(__webpack_require__(/*! @/pages.json */ 195));
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e34) { throw _e34; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e35) { didErr = true; err = _e35; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
@@ -1810,7 +1825,7 @@ var S = "development" === "development",
   x = true;
 var O = "";
 try {
-  O = (__webpack_require__(/*! uni-stat-config */ 188).default || __webpack_require__(/*! uni-stat-config */ 188)).appid;
+  O = (__webpack_require__(/*! uni-stat-config */ 196).default || __webpack_require__(/*! uni-stat-config */ 196)).appid;
 } catch (e) {}
 var E = {};
 function L(e) {
@@ -9158,16 +9173,16 @@ exports.default = Bs;
 
 /***/ }),
 
-/***/ 185:
+/***/ 193:
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/wrapNativeSuper.js ***!
   \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getPrototypeOf = __webpack_require__(/*! ./getPrototypeOf.js */ 133);
+var getPrototypeOf = __webpack_require__(/*! ./getPrototypeOf.js */ 141);
 var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf.js */ 16);
-var isNativeFunction = __webpack_require__(/*! ./isNativeFunction.js */ 186);
+var isNativeFunction = __webpack_require__(/*! ./isNativeFunction.js */ 194);
 var construct = __webpack_require__(/*! ./construct.js */ 15);
 function _wrapNativeSuper(Class) {
   var _cache = typeof Map === "function" ? new Map() : undefined;
@@ -9199,7 +9214,7 @@ module.exports = _wrapNativeSuper, module.exports.__esModule = true, module.expo
 
 /***/ }),
 
-/***/ 186:
+/***/ 194:
 /*!*****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/isNativeFunction.js ***!
   \*****************************************************************/
@@ -9217,7 +9232,7 @@ module.exports = _isNativeFunction, module.exports.__esModule = true, module.exp
 
 /***/ }),
 
-/***/ 187:
+/***/ 195:
 /*!********************************************************************************************!*\
   !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/pages.json?{"type":"origin-pages-json"} ***!
   \********************************************************************************************/
@@ -9240,7 +9255,7 @@ var _default = {
   }, {
     "path": "pages/home/index",
     "style": {
-      "navigationBarTitleText": "首页"
+      "navigationBarTitleText": "农产品溯源"
     }
   }, {
     "path": "pages/ncpsy/index",
@@ -9322,7 +9337,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 188:
+/***/ 196:
 /*!*******************************************************************************!*\
   !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/pages.json?{"type":"stat"} ***!
   \*******************************************************************************/
@@ -9340,21 +9355,6 @@ var _default = {
   "appid": "__UNI__894A930"
 };
 exports.default = _default;
-
-/***/ }),
-
-/***/ 19:
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ 9);
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return arrayLikeToArray(arr);
-}
-module.exports = _arrayWithoutHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -10872,7 +10872,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -12347,44 +12347,6 @@ module.exports = _classCallCheck, module.exports.__esModule = true, module.expor
 
 /***/ }),
 
-/***/ 238:
-/*!*********************************************************************************************************************************!*\
-  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/index.js ***!
-  \*********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 239));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 240));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 241));
-var _default = {
-  en: _en.default,
-  'zh-Hans': _zhHans.default,
-  'zh-Hant': _zhHant.default
-};
-exports.default = _default;
-
-/***/ }),
-
-/***/ 239:
-/*!********************************************************************************************************************************!*\
-  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/en.json ***!
-  \********************************************************************************************************************************/
-/*! exports provided: uni-datetime-picker.selectDate, uni-datetime-picker.selectTime, uni-datetime-picker.selectDateTime, uni-datetime-picker.startDate, uni-datetime-picker.endDate, uni-datetime-picker.startTime, uni-datetime-picker.endTime, uni-datetime-picker.ok, uni-datetime-picker.clear, uni-datetime-picker.cancel, uni-datetime-picker.year, uni-datetime-picker.month, uni-calender.MON, uni-calender.TUE, uni-calender.WED, uni-calender.THU, uni-calender.FRI, uni-calender.SAT, uni-calender.SUN, uni-calender.confirm, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"select date\",\"uni-datetime-picker.selectTime\":\"select time\",\"uni-datetime-picker.selectDateTime\":\"select date and time\",\"uni-datetime-picker.startDate\":\"start date\",\"uni-datetime-picker.endDate\":\"end date\",\"uni-datetime-picker.startTime\":\"start time\",\"uni-datetime-picker.endTime\":\"end time\",\"uni-datetime-picker.ok\":\"ok\",\"uni-datetime-picker.clear\":\"clear\",\"uni-datetime-picker.cancel\":\"cancel\",\"uni-datetime-picker.year\":\"-\",\"uni-datetime-picker.month\":\"\",\"uni-calender.MON\":\"MON\",\"uni-calender.TUE\":\"TUE\",\"uni-calender.WED\":\"WED\",\"uni-calender.THU\":\"THU\",\"uni-calender.FRI\":\"FRI\",\"uni-calender.SAT\":\"SAT\",\"uni-calender.SUN\":\"SUN\",\"uni-calender.confirm\":\"confirm\"}");
-
-/***/ }),
-
 /***/ 24:
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
@@ -12414,32 +12376,10 @@ module.exports = _createClass, module.exports.__esModule = true, module.exports[
 
 /***/ }),
 
-/***/ 240:
-/*!*************************************************************************************************************************************!*\
-  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/zh-Hans.json ***!
-  \*************************************************************************************************************************************/
-/*! exports provided: uni-datetime-picker.selectDate, uni-datetime-picker.selectTime, uni-datetime-picker.selectDateTime, uni-datetime-picker.startDate, uni-datetime-picker.endDate, uni-datetime-picker.startTime, uni-datetime-picker.endTime, uni-datetime-picker.ok, uni-datetime-picker.clear, uni-datetime-picker.cancel, uni-datetime-picker.year, uni-datetime-picker.month, uni-calender.SUN, uni-calender.MON, uni-calender.TUE, uni-calender.WED, uni-calender.THU, uni-calender.FRI, uni-calender.SAT, uni-calender.confirm, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"选择日期\",\"uni-datetime-picker.selectTime\":\"选择时间\",\"uni-datetime-picker.selectDateTime\":\"选择日期时间\",\"uni-datetime-picker.startDate\":\"开始日期\",\"uni-datetime-picker.endDate\":\"结束日期\",\"uni-datetime-picker.startTime\":\"开始时间\",\"uni-datetime-picker.endTime\":\"结束时间\",\"uni-datetime-picker.ok\":\"确定\",\"uni-datetime-picker.clear\":\"清除\",\"uni-datetime-picker.cancel\":\"取消\",\"uni-datetime-picker.year\":\"年\",\"uni-datetime-picker.month\":\"月\",\"uni-calender.SUN\":\"日\",\"uni-calender.MON\":\"一\",\"uni-calender.TUE\":\"二\",\"uni-calender.WED\":\"三\",\"uni-calender.THU\":\"四\",\"uni-calender.FRI\":\"五\",\"uni-calender.SAT\":\"六\",\"uni-calender.confirm\":\"确认\"}");
-
-/***/ }),
-
-/***/ 241:
-/*!*************************************************************************************************************************************!*\
-  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/zh-Hant.json ***!
-  \*************************************************************************************************************************************/
-/*! exports provided: uni-datetime-picker.selectDate, uni-datetime-picker.selectTime, uni-datetime-picker.selectDateTime, uni-datetime-picker.startDate, uni-datetime-picker.endDate, uni-datetime-picker.startTime, uni-datetime-picker.endTime, uni-datetime-picker.ok, uni-datetime-picker.clear, uni-datetime-picker.cancel, uni-datetime-picker.year, uni-datetime-picker.month, uni-calender.SUN, uni-calender.MON, uni-calender.TUE, uni-calender.WED, uni-calender.THU, uni-calender.FRI, uni-calender.SAT, uni-calender.confirm, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"選擇日期\",\"uni-datetime-picker.selectTime\":\"選擇時間\",\"uni-datetime-picker.selectDateTime\":\"選擇日期時間\",\"uni-datetime-picker.startDate\":\"開始日期\",\"uni-datetime-picker.endDate\":\"結束日期\",\"uni-datetime-picker.startTime\":\"開始时间\",\"uni-datetime-picker.endTime\":\"結束时间\",\"uni-datetime-picker.ok\":\"確定\",\"uni-datetime-picker.clear\":\"清除\",\"uni-datetime-picker.cancel\":\"取消\",\"uni-datetime-picker.year\":\"年\",\"uni-datetime-picker.month\":\"月\",\"uni-calender.SUN\":\"日\",\"uni-calender.MON\":\"一\",\"uni-calender.TUE\":\"二\",\"uni-calender.WED\":\"三\",\"uni-calender.THU\":\"四\",\"uni-calender.FRI\":\"五\",\"uni-calender.SAT\":\"六\",\"uni-calender.confirm\":\"確認\"}");
-
-/***/ }),
-
-/***/ 242:
-/*!***************************************************************************************************************************!*\
-  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/util.js ***!
-  \***************************************************************************************************************************/
+/***/ 246:
+/*!*********************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/index.js ***!
+  \*********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12450,439 +12390,49 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/inte
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Calendar = void 0;
-exports.addZero = addZero;
-exports.checkDate = checkDate;
-exports.dateCompare = dateCompare;
-exports.fixIosDateFormat = fixIosDateFormat;
-exports.getDate = getDate;
-exports.getDateTime = getDateTime;
-exports.getDefaultSecond = getDefaultSecond;
-exports.getTime = getTime;
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ 18));
-var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ 23));
-var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ 24));
-var Calendar = /*#__PURE__*/function () {
-  function Calendar() {
-    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      selected = _ref.selected,
-      startDate = _ref.startDate,
-      endDate = _ref.endDate,
-      range = _ref.range;
-    (0, _classCallCheck2.default)(this, Calendar);
-    // 当前日期
-    this.date = this.getDateObj(new Date()); // 当前初入日期
-    // 打点信息
-    this.selected = selected || [];
-    // 起始时间
-    this.startDate = startDate;
-    // 终止时间
-    this.endDate = endDate;
-    // 是否范围选择
-    this.range = range;
-    // 多选状态
-    this.cleanMultipleStatus();
-    // 每周日期
-    this.weeks = {};
-    this.lastHover = false;
-  }
-  /**
-   * 设置日期
-   * @param {Object} date
-   */
-  (0, _createClass2.default)(Calendar, [{
-    key: "setDate",
-    value: function setDate(date) {
-      var selectDate = this.getDateObj(date);
-      this.getWeeks(selectDate.fullDate);
-    }
+exports.default = void 0;
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 247));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 248));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 249));
+var _default = {
+  en: _en.default,
+  'zh-Hans': _zhHans.default,
+  'zh-Hant': _zhHant.default
+};
+exports.default = _default;
 
-    /**
-     * 清理多选状态
-     */
-  }, {
-    key: "cleanMultipleStatus",
-    value: function cleanMultipleStatus() {
-      this.multipleStatus = {
-        before: '',
-        after: '',
-        data: []
-      };
-    }
-  }, {
-    key: "setStartDate",
-    value: function setStartDate(startDate) {
-      this.startDate = startDate;
-    }
-  }, {
-    key: "setEndDate",
-    value: function setEndDate(endDate) {
-      this.endDate = endDate;
-    }
-  }, {
-    key: "getPreMonthObj",
-    value: function getPreMonthObj(date) {
-      date = fixIosDateFormat(date);
-      date = new Date(date);
-      var oldMonth = date.getMonth();
-      date.setMonth(oldMonth - 1);
-      var newMonth = date.getMonth();
-      if (oldMonth !== 0 && newMonth - oldMonth === 0) {
-        date.setMonth(newMonth - 1);
-      }
-      return this.getDateObj(date);
-    }
-  }, {
-    key: "getNextMonthObj",
-    value: function getNextMonthObj(date) {
-      date = fixIosDateFormat(date);
-      date = new Date(date);
-      var oldMonth = date.getMonth();
-      date.setMonth(oldMonth + 1);
-      var newMonth = date.getMonth();
-      if (newMonth - oldMonth > 1) {
-        date.setMonth(newMonth - 1);
-      }
-      return this.getDateObj(date);
-    }
+/***/ }),
 
-    /**
-     * 获取指定格式Date对象
-     */
-  }, {
-    key: "getDateObj",
-    value: function getDateObj(date) {
-      date = fixIosDateFormat(date);
-      date = new Date(date);
-      return {
-        fullDate: getDate(date),
-        year: date.getFullYear(),
-        month: addZero(date.getMonth() + 1),
-        date: addZero(date.getDate()),
-        day: date.getDay()
-      };
-    }
+/***/ 247:
+/*!********************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/en.json ***!
+  \********************************************************************************************************************************/
+/*! exports provided: uni-datetime-picker.selectDate, uni-datetime-picker.selectTime, uni-datetime-picker.selectDateTime, uni-datetime-picker.startDate, uni-datetime-picker.endDate, uni-datetime-picker.startTime, uni-datetime-picker.endTime, uni-datetime-picker.ok, uni-datetime-picker.clear, uni-datetime-picker.cancel, uni-datetime-picker.year, uni-datetime-picker.month, uni-calender.MON, uni-calender.TUE, uni-calender.WED, uni-calender.THU, uni-calender.FRI, uni-calender.SAT, uni-calender.SUN, uni-calender.confirm, default */
+/***/ (function(module) {
 
-    /**
-     * 获取上一个月日期集合
-     */
-  }, {
-    key: "getPreMonthDays",
-    value: function getPreMonthDays(amount, dateObj) {
-      var result = [];
-      for (var i = amount - 1; i >= 0; i--) {
-        var month = dateObj.month - 1;
-        result.push({
-          date: new Date(dateObj.year, month, -i).getDate(),
-          month: month,
-          disable: true
-        });
-      }
-      return result;
-    }
-    /**
-     * 获取本月日期集合
-     */
-  }, {
-    key: "getCurrentMonthDays",
-    value: function getCurrentMonthDays(amount, dateObj) {
-      var _this = this;
-      var result = [];
-      var fullDate = this.date.fullDate;
-      var _loop = function _loop(i) {
-        var currentDate = "".concat(dateObj.year, "-").concat(dateObj.month, "-").concat(addZero(i));
-        var isToday = fullDate === currentDate;
-        // 获取打点信息
-        var info = _this.selected && _this.selected.find(function (item) {
-          if (_this.dateEqual(currentDate, item.date)) {
-            return item;
-          }
-        });
+module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"select date\",\"uni-datetime-picker.selectTime\":\"select time\",\"uni-datetime-picker.selectDateTime\":\"select date and time\",\"uni-datetime-picker.startDate\":\"start date\",\"uni-datetime-picker.endDate\":\"end date\",\"uni-datetime-picker.startTime\":\"start time\",\"uni-datetime-picker.endTime\":\"end time\",\"uni-datetime-picker.ok\":\"ok\",\"uni-datetime-picker.clear\":\"clear\",\"uni-datetime-picker.cancel\":\"cancel\",\"uni-datetime-picker.year\":\"-\",\"uni-datetime-picker.month\":\"\",\"uni-calender.MON\":\"MON\",\"uni-calender.TUE\":\"TUE\",\"uni-calender.WED\":\"WED\",\"uni-calender.THU\":\"THU\",\"uni-calender.FRI\":\"FRI\",\"uni-calender.SAT\":\"SAT\",\"uni-calender.SUN\":\"SUN\",\"uni-calender.confirm\":\"confirm\"}");
 
-        // 日期禁用
-        var disableBefore = true;
-        var disableAfter = true;
-        if (_this.startDate) {
-          disableBefore = dateCompare(_this.startDate, currentDate);
-        }
-        if (_this.endDate) {
-          disableAfter = dateCompare(currentDate, _this.endDate);
-        }
-        var multiples = _this.multipleStatus.data;
-        var multiplesStatus = -1;
-        if (_this.range && multiples) {
-          multiplesStatus = multiples.findIndex(function (item) {
-            return _this.dateEqual(item, currentDate);
-          });
-        }
-        var checked = multiplesStatus !== -1;
-        result.push({
-          fullDate: currentDate,
-          year: dateObj.year,
-          date: i,
-          multiple: _this.range ? checked : false,
-          beforeMultiple: _this.isLogicBefore(currentDate, _this.multipleStatus.before, _this.multipleStatus.after),
-          afterMultiple: _this.isLogicAfter(currentDate, _this.multipleStatus.before, _this.multipleStatus.after),
-          month: dateObj.month,
-          disable: _this.startDate && !dateCompare(_this.startDate, currentDate) || _this.endDate && !dateCompare(currentDate, _this.endDate),
-          isToday: isToday,
-          userChecked: false,
-          extraInfo: info
-        });
-      };
-      for (var i = 1; i <= amount; i++) {
-        _loop(i);
-      }
-      return result;
-    }
-    /**
-     * 获取下一个月日期集合
-     */
-  }, {
-    key: "_getNextMonthDays",
-    value: function _getNextMonthDays(amount, dateObj) {
-      var result = [];
-      var month = dateObj.month + 1;
-      for (var i = 1; i <= amount; i++) {
-        result.push({
-          date: i,
-          month: month,
-          disable: true
-        });
-      }
-      return result;
-    }
+/***/ }),
 
-    /**
-     * 获取当前日期详情
-     * @param {Object} date
-     */
-  }, {
-    key: "getInfo",
-    value: function getInfo(date) {
-      var _this2 = this;
-      if (!date) {
-        date = new Date();
-      }
-      return this.calendar.find(function (item) {
-        return item.fullDate === _this2.getDateObj(date).fullDate;
-      });
-    }
+/***/ 248:
+/*!*************************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/zh-Hans.json ***!
+  \*************************************************************************************************************************************/
+/*! exports provided: uni-datetime-picker.selectDate, uni-datetime-picker.selectTime, uni-datetime-picker.selectDateTime, uni-datetime-picker.startDate, uni-datetime-picker.endDate, uni-datetime-picker.startTime, uni-datetime-picker.endTime, uni-datetime-picker.ok, uni-datetime-picker.clear, uni-datetime-picker.cancel, uni-datetime-picker.year, uni-datetime-picker.month, uni-calender.SUN, uni-calender.MON, uni-calender.TUE, uni-calender.WED, uni-calender.THU, uni-calender.FRI, uni-calender.SAT, uni-calender.confirm, default */
+/***/ (function(module) {
 
-    /**
-     * 比较时间是否相等
-     */
-  }, {
-    key: "dateEqual",
-    value: function dateEqual(before, after) {
-      before = new Date(fixIosDateFormat(before));
-      after = new Date(fixIosDateFormat(after));
-      return before.valueOf() === after.valueOf();
-    }
+module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"选择日期\",\"uni-datetime-picker.selectTime\":\"选择时间\",\"uni-datetime-picker.selectDateTime\":\"选择日期时间\",\"uni-datetime-picker.startDate\":\"开始日期\",\"uni-datetime-picker.endDate\":\"结束日期\",\"uni-datetime-picker.startTime\":\"开始时间\",\"uni-datetime-picker.endTime\":\"结束时间\",\"uni-datetime-picker.ok\":\"确定\",\"uni-datetime-picker.clear\":\"清除\",\"uni-datetime-picker.cancel\":\"取消\",\"uni-datetime-picker.year\":\"年\",\"uni-datetime-picker.month\":\"月\",\"uni-calender.SUN\":\"日\",\"uni-calender.MON\":\"一\",\"uni-calender.TUE\":\"二\",\"uni-calender.WED\":\"三\",\"uni-calender.THU\":\"四\",\"uni-calender.FRI\":\"五\",\"uni-calender.SAT\":\"六\",\"uni-calender.confirm\":\"确认\"}");
 
-    /**
-     *  比较真实起始日期
-     */
-  }, {
-    key: "isLogicBefore",
-    value: function isLogicBefore(currentDate, before, after) {
-      var logicBefore = before;
-      if (before && after) {
-        logicBefore = dateCompare(before, after) ? before : after;
-      }
-      return this.dateEqual(logicBefore, currentDate);
-    }
-  }, {
-    key: "isLogicAfter",
-    value: function isLogicAfter(currentDate, before, after) {
-      var logicAfter = after;
-      if (before && after) {
-        logicAfter = dateCompare(before, after) ? after : before;
-      }
-      return this.dateEqual(logicAfter, currentDate);
-    }
+/***/ }),
 
-    /**
-     * 获取日期范围内所有日期
-     * @param {Object} begin
-     * @param {Object} end
-     */
-  }, {
-    key: "geDateAll",
-    value: function geDateAll(begin, end) {
-      var arr = [];
-      var ab = begin.split('-');
-      var ae = end.split('-');
-      var db = new Date();
-      db.setFullYear(ab[0], ab[1] - 1, ab[2]);
-      var de = new Date();
-      de.setFullYear(ae[0], ae[1] - 1, ae[2]);
-      var unixDb = db.getTime() - 24 * 60 * 60 * 1000;
-      var unixDe = de.getTime() - 24 * 60 * 60 * 1000;
-      for (var k = unixDb; k <= unixDe;) {
-        k = k + 24 * 60 * 60 * 1000;
-        arr.push(this.getDateObj(new Date(parseInt(k))).fullDate);
-      }
-      return arr;
-    }
+/***/ 249:
+/*!*************************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/zh-Hant.json ***!
+  \*************************************************************************************************************************************/
+/*! exports provided: uni-datetime-picker.selectDate, uni-datetime-picker.selectTime, uni-datetime-picker.selectDateTime, uni-datetime-picker.startDate, uni-datetime-picker.endDate, uni-datetime-picker.startTime, uni-datetime-picker.endTime, uni-datetime-picker.ok, uni-datetime-picker.clear, uni-datetime-picker.cancel, uni-datetime-picker.year, uni-datetime-picker.month, uni-calender.SUN, uni-calender.MON, uni-calender.TUE, uni-calender.WED, uni-calender.THU, uni-calender.FRI, uni-calender.SAT, uni-calender.confirm, default */
+/***/ (function(module) {
 
-    /**
-     *  获取多选状态
-     */
-  }, {
-    key: "setMultiple",
-    value: function setMultiple(fullDate) {
-      if (!this.range) return;
-      var _this$multipleStatus = this.multipleStatus,
-        before = _this$multipleStatus.before,
-        after = _this$multipleStatus.after;
-      if (before && after) {
-        if (!this.lastHover) {
-          this.lastHover = true;
-          return;
-        }
-        this.multipleStatus.before = fullDate;
-        this.multipleStatus.after = '';
-        this.multipleStatus.data = [];
-        this.multipleStatus.fulldate = '';
-        this.lastHover = false;
-      } else {
-        if (!before) {
-          this.multipleStatus.before = fullDate;
-          this.multipleStatus.after = undefined;
-          this.lastHover = false;
-        } else {
-          this.multipleStatus.after = fullDate;
-          if (dateCompare(this.multipleStatus.before, this.multipleStatus.after)) {
-            this.multipleStatus.data = this.geDateAll(this.multipleStatus.before, this.multipleStatus.after);
-          } else {
-            this.multipleStatus.data = this.geDateAll(this.multipleStatus.after, this.multipleStatus.before);
-          }
-          this.lastHover = true;
-        }
-      }
-      this.getWeeks(fullDate);
-    }
-
-    /**
-     *  鼠标 hover 更新多选状态
-     */
-  }, {
-    key: "setHoverMultiple",
-    value: function setHoverMultiple(fullDate) {
-      //抖音小程序点击会触发hover事件，需要避免一下
-
-      if (!this.range || this.lastHover) return;
-      var before = this.multipleStatus.before;
-      if (!before) {
-        this.multipleStatus.before = fullDate;
-      } else {
-        this.multipleStatus.after = fullDate;
-        if (dateCompare(this.multipleStatus.before, this.multipleStatus.after)) {
-          this.multipleStatus.data = this.geDateAll(this.multipleStatus.before, this.multipleStatus.after);
-        } else {
-          this.multipleStatus.data = this.geDateAll(this.multipleStatus.after, this.multipleStatus.before);
-        }
-      }
-      this.getWeeks(fullDate);
-    }
-
-    /**
-     * 更新默认值多选状态
-     */
-  }, {
-    key: "setDefaultMultiple",
-    value: function setDefaultMultiple(before, after) {
-      this.multipleStatus.before = before;
-      this.multipleStatus.after = after;
-      if (before && after) {
-        if (dateCompare(before, after)) {
-          this.multipleStatus.data = this.geDateAll(before, after);
-          this.getWeeks(after);
-        } else {
-          this.multipleStatus.data = this.geDateAll(after, before);
-          this.getWeeks(before);
-        }
-      }
-    }
-
-    /**
-     * 获取每周数据
-     * @param {Object} dateData
-     */
-  }, {
-    key: "getWeeks",
-    value: function getWeeks(dateData) {
-      var _this$getDateObj = this.getDateObj(dateData),
-        year = _this$getDateObj.year,
-        month = _this$getDateObj.month;
-      var preMonthDayAmount = new Date(year, month - 1, 1).getDay();
-      var preMonthDays = this.getPreMonthDays(preMonthDayAmount, this.getDateObj(dateData));
-      var currentMonthDayAmount = new Date(year, month, 0).getDate();
-      var currentMonthDays = this.getCurrentMonthDays(currentMonthDayAmount, this.getDateObj(dateData));
-      var nextMonthDayAmount = 42 - preMonthDayAmount - currentMonthDayAmount;
-      var nextMonthDays = this._getNextMonthDays(nextMonthDayAmount, this.getDateObj(dateData));
-      var calendarDays = [].concat((0, _toConsumableArray2.default)(preMonthDays), (0, _toConsumableArray2.default)(currentMonthDays), (0, _toConsumableArray2.default)(nextMonthDays));
-      var weeks = new Array(6);
-      for (var i = 0; i < calendarDays.length; i++) {
-        var index = Math.floor(i / 7);
-        if (!weeks[index]) {
-          weeks[index] = new Array(7);
-        }
-        weeks[index][i % 7] = calendarDays[i];
-      }
-      this.calendar = calendarDays;
-      this.weeks = weeks;
-    }
-  }]);
-  return Calendar;
-}();
-exports.Calendar = Calendar;
-function getDateTime(date, hideSecond) {
-  return "".concat(getDate(date), " ").concat(getTime(date, hideSecond));
-}
-function getDate(date) {
-  date = fixIosDateFormat(date);
-  date = new Date(date);
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
-  return "".concat(year, "-").concat(addZero(month), "-").concat(addZero(day));
-}
-function getTime(date, hideSecond) {
-  date = fixIosDateFormat(date);
-  date = new Date(date);
-  var hour = date.getHours();
-  var minute = date.getMinutes();
-  var second = date.getSeconds();
-  return hideSecond ? "".concat(addZero(hour), ":").concat(addZero(minute)) : "".concat(addZero(hour), ":").concat(addZero(minute), ":").concat(addZero(second));
-}
-function addZero(num) {
-  if (num < 10) {
-    num = "0".concat(num);
-  }
-  return num;
-}
-function getDefaultSecond(hideSecond) {
-  return hideSecond ? '00:00' : '00:00:00';
-}
-function dateCompare(startDate, endDate) {
-  startDate = new Date(fixIosDateFormat(startDate));
-  endDate = new Date(fixIosDateFormat(endDate));
-  return startDate <= endDate;
-}
-function checkDate(date) {
-  var dateReg = /((19|20)\d{2})(-|\/)\d{1,2}(-|\/)\d{1,2}/g;
-  return date.match(dateReg);
-}
-//ios低版本15及以下，无法匹配 没有 ’秒‘ 时的情况，所以需要在末尾 秒 加上 问号
-var dateTimeReg = /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])( [0-5]?[0-9]:[0-5]?[0-9](:[0-5]?[0-9])?)?$/;
-function fixIosDateFormat(value) {
-  if (typeof value === 'string' && dateTimeReg.test(value)) {
-    value = value.replace(/-/g, '/');
-  }
-  return value;
-}
+module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"選擇日期\",\"uni-datetime-picker.selectTime\":\"選擇時間\",\"uni-datetime-picker.selectDateTime\":\"選擇日期時間\",\"uni-datetime-picker.startDate\":\"開始日期\",\"uni-datetime-picker.endDate\":\"結束日期\",\"uni-datetime-picker.startTime\":\"開始时间\",\"uni-datetime-picker.endTime\":\"結束时间\",\"uni-datetime-picker.ok\":\"確定\",\"uni-datetime-picker.clear\":\"清除\",\"uni-datetime-picker.cancel\":\"取消\",\"uni-datetime-picker.year\":\"年\",\"uni-datetime-picker.month\":\"月\",\"uni-calender.SUN\":\"日\",\"uni-calender.MON\":\"一\",\"uni-calender.TUE\":\"二\",\"uni-calender.WED\":\"三\",\"uni-calender.THU\":\"四\",\"uni-calender.FRI\":\"五\",\"uni-calender.SAT\":\"六\",\"uni-calender.confirm\":\"確認\"}");
 
 /***/ }),
 
@@ -18425,7 +17975,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -18446,14 +17996,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -18549,7 +18099,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -18969,6 +18519,456 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 250:
+/*!***************************************************************************************************************************!*\
+  !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-datetime-picker/components/uni-datetime-picker/util.js ***!
+  \***************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Calendar = void 0;
+exports.addZero = addZero;
+exports.checkDate = checkDate;
+exports.dateCompare = dateCompare;
+exports.fixIosDateFormat = fixIosDateFormat;
+exports.getDate = getDate;
+exports.getDateTime = getDateTime;
+exports.getDefaultSecond = getDefaultSecond;
+exports.getTime = getTime;
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ 18));
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ 23));
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ 24));
+var Calendar = /*#__PURE__*/function () {
+  function Calendar() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      selected = _ref.selected,
+      startDate = _ref.startDate,
+      endDate = _ref.endDate,
+      range = _ref.range;
+    (0, _classCallCheck2.default)(this, Calendar);
+    // 当前日期
+    this.date = this.getDateObj(new Date()); // 当前初入日期
+    // 打点信息
+    this.selected = selected || [];
+    // 起始时间
+    this.startDate = startDate;
+    // 终止时间
+    this.endDate = endDate;
+    // 是否范围选择
+    this.range = range;
+    // 多选状态
+    this.cleanMultipleStatus();
+    // 每周日期
+    this.weeks = {};
+    this.lastHover = false;
+  }
+  /**
+   * 设置日期
+   * @param {Object} date
+   */
+  (0, _createClass2.default)(Calendar, [{
+    key: "setDate",
+    value: function setDate(date) {
+      var selectDate = this.getDateObj(date);
+      this.getWeeks(selectDate.fullDate);
+    }
+
+    /**
+     * 清理多选状态
+     */
+  }, {
+    key: "cleanMultipleStatus",
+    value: function cleanMultipleStatus() {
+      this.multipleStatus = {
+        before: '',
+        after: '',
+        data: []
+      };
+    }
+  }, {
+    key: "setStartDate",
+    value: function setStartDate(startDate) {
+      this.startDate = startDate;
+    }
+  }, {
+    key: "setEndDate",
+    value: function setEndDate(endDate) {
+      this.endDate = endDate;
+    }
+  }, {
+    key: "getPreMonthObj",
+    value: function getPreMonthObj(date) {
+      date = fixIosDateFormat(date);
+      date = new Date(date);
+      var oldMonth = date.getMonth();
+      date.setMonth(oldMonth - 1);
+      var newMonth = date.getMonth();
+      if (oldMonth !== 0 && newMonth - oldMonth === 0) {
+        date.setMonth(newMonth - 1);
+      }
+      return this.getDateObj(date);
+    }
+  }, {
+    key: "getNextMonthObj",
+    value: function getNextMonthObj(date) {
+      date = fixIosDateFormat(date);
+      date = new Date(date);
+      var oldMonth = date.getMonth();
+      date.setMonth(oldMonth + 1);
+      var newMonth = date.getMonth();
+      if (newMonth - oldMonth > 1) {
+        date.setMonth(newMonth - 1);
+      }
+      return this.getDateObj(date);
+    }
+
+    /**
+     * 获取指定格式Date对象
+     */
+  }, {
+    key: "getDateObj",
+    value: function getDateObj(date) {
+      date = fixIosDateFormat(date);
+      date = new Date(date);
+      return {
+        fullDate: getDate(date),
+        year: date.getFullYear(),
+        month: addZero(date.getMonth() + 1),
+        date: addZero(date.getDate()),
+        day: date.getDay()
+      };
+    }
+
+    /**
+     * 获取上一个月日期集合
+     */
+  }, {
+    key: "getPreMonthDays",
+    value: function getPreMonthDays(amount, dateObj) {
+      var result = [];
+      for (var i = amount - 1; i >= 0; i--) {
+        var month = dateObj.month - 1;
+        result.push({
+          date: new Date(dateObj.year, month, -i).getDate(),
+          month: month,
+          disable: true
+        });
+      }
+      return result;
+    }
+    /**
+     * 获取本月日期集合
+     */
+  }, {
+    key: "getCurrentMonthDays",
+    value: function getCurrentMonthDays(amount, dateObj) {
+      var _this = this;
+      var result = [];
+      var fullDate = this.date.fullDate;
+      var _loop = function _loop(i) {
+        var currentDate = "".concat(dateObj.year, "-").concat(dateObj.month, "-").concat(addZero(i));
+        var isToday = fullDate === currentDate;
+        // 获取打点信息
+        var info = _this.selected && _this.selected.find(function (item) {
+          if (_this.dateEqual(currentDate, item.date)) {
+            return item;
+          }
+        });
+
+        // 日期禁用
+        var disableBefore = true;
+        var disableAfter = true;
+        if (_this.startDate) {
+          disableBefore = dateCompare(_this.startDate, currentDate);
+        }
+        if (_this.endDate) {
+          disableAfter = dateCompare(currentDate, _this.endDate);
+        }
+        var multiples = _this.multipleStatus.data;
+        var multiplesStatus = -1;
+        if (_this.range && multiples) {
+          multiplesStatus = multiples.findIndex(function (item) {
+            return _this.dateEqual(item, currentDate);
+          });
+        }
+        var checked = multiplesStatus !== -1;
+        result.push({
+          fullDate: currentDate,
+          year: dateObj.year,
+          date: i,
+          multiple: _this.range ? checked : false,
+          beforeMultiple: _this.isLogicBefore(currentDate, _this.multipleStatus.before, _this.multipleStatus.after),
+          afterMultiple: _this.isLogicAfter(currentDate, _this.multipleStatus.before, _this.multipleStatus.after),
+          month: dateObj.month,
+          disable: _this.startDate && !dateCompare(_this.startDate, currentDate) || _this.endDate && !dateCompare(currentDate, _this.endDate),
+          isToday: isToday,
+          userChecked: false,
+          extraInfo: info
+        });
+      };
+      for (var i = 1; i <= amount; i++) {
+        _loop(i);
+      }
+      return result;
+    }
+    /**
+     * 获取下一个月日期集合
+     */
+  }, {
+    key: "_getNextMonthDays",
+    value: function _getNextMonthDays(amount, dateObj) {
+      var result = [];
+      var month = dateObj.month + 1;
+      for (var i = 1; i <= amount; i++) {
+        result.push({
+          date: i,
+          month: month,
+          disable: true
+        });
+      }
+      return result;
+    }
+
+    /**
+     * 获取当前日期详情
+     * @param {Object} date
+     */
+  }, {
+    key: "getInfo",
+    value: function getInfo(date) {
+      var _this2 = this;
+      if (!date) {
+        date = new Date();
+      }
+      return this.calendar.find(function (item) {
+        return item.fullDate === _this2.getDateObj(date).fullDate;
+      });
+    }
+
+    /**
+     * 比较时间是否相等
+     */
+  }, {
+    key: "dateEqual",
+    value: function dateEqual(before, after) {
+      before = new Date(fixIosDateFormat(before));
+      after = new Date(fixIosDateFormat(after));
+      return before.valueOf() === after.valueOf();
+    }
+
+    /**
+     *  比较真实起始日期
+     */
+  }, {
+    key: "isLogicBefore",
+    value: function isLogicBefore(currentDate, before, after) {
+      var logicBefore = before;
+      if (before && after) {
+        logicBefore = dateCompare(before, after) ? before : after;
+      }
+      return this.dateEqual(logicBefore, currentDate);
+    }
+  }, {
+    key: "isLogicAfter",
+    value: function isLogicAfter(currentDate, before, after) {
+      var logicAfter = after;
+      if (before && after) {
+        logicAfter = dateCompare(before, after) ? after : before;
+      }
+      return this.dateEqual(logicAfter, currentDate);
+    }
+
+    /**
+     * 获取日期范围内所有日期
+     * @param {Object} begin
+     * @param {Object} end
+     */
+  }, {
+    key: "geDateAll",
+    value: function geDateAll(begin, end) {
+      var arr = [];
+      var ab = begin.split('-');
+      var ae = end.split('-');
+      var db = new Date();
+      db.setFullYear(ab[0], ab[1] - 1, ab[2]);
+      var de = new Date();
+      de.setFullYear(ae[0], ae[1] - 1, ae[2]);
+      var unixDb = db.getTime() - 24 * 60 * 60 * 1000;
+      var unixDe = de.getTime() - 24 * 60 * 60 * 1000;
+      for (var k = unixDb; k <= unixDe;) {
+        k = k + 24 * 60 * 60 * 1000;
+        arr.push(this.getDateObj(new Date(parseInt(k))).fullDate);
+      }
+      return arr;
+    }
+
+    /**
+     *  获取多选状态
+     */
+  }, {
+    key: "setMultiple",
+    value: function setMultiple(fullDate) {
+      if (!this.range) return;
+      var _this$multipleStatus = this.multipleStatus,
+        before = _this$multipleStatus.before,
+        after = _this$multipleStatus.after;
+      if (before && after) {
+        if (!this.lastHover) {
+          this.lastHover = true;
+          return;
+        }
+        this.multipleStatus.before = fullDate;
+        this.multipleStatus.after = '';
+        this.multipleStatus.data = [];
+        this.multipleStatus.fulldate = '';
+        this.lastHover = false;
+      } else {
+        if (!before) {
+          this.multipleStatus.before = fullDate;
+          this.multipleStatus.after = undefined;
+          this.lastHover = false;
+        } else {
+          this.multipleStatus.after = fullDate;
+          if (dateCompare(this.multipleStatus.before, this.multipleStatus.after)) {
+            this.multipleStatus.data = this.geDateAll(this.multipleStatus.before, this.multipleStatus.after);
+          } else {
+            this.multipleStatus.data = this.geDateAll(this.multipleStatus.after, this.multipleStatus.before);
+          }
+          this.lastHover = true;
+        }
+      }
+      this.getWeeks(fullDate);
+    }
+
+    /**
+     *  鼠标 hover 更新多选状态
+     */
+  }, {
+    key: "setHoverMultiple",
+    value: function setHoverMultiple(fullDate) {
+      //抖音小程序点击会触发hover事件，需要避免一下
+
+      if (!this.range || this.lastHover) return;
+      var before = this.multipleStatus.before;
+      if (!before) {
+        this.multipleStatus.before = fullDate;
+      } else {
+        this.multipleStatus.after = fullDate;
+        if (dateCompare(this.multipleStatus.before, this.multipleStatus.after)) {
+          this.multipleStatus.data = this.geDateAll(this.multipleStatus.before, this.multipleStatus.after);
+        } else {
+          this.multipleStatus.data = this.geDateAll(this.multipleStatus.after, this.multipleStatus.before);
+        }
+      }
+      this.getWeeks(fullDate);
+    }
+
+    /**
+     * 更新默认值多选状态
+     */
+  }, {
+    key: "setDefaultMultiple",
+    value: function setDefaultMultiple(before, after) {
+      this.multipleStatus.before = before;
+      this.multipleStatus.after = after;
+      if (before && after) {
+        if (dateCompare(before, after)) {
+          this.multipleStatus.data = this.geDateAll(before, after);
+          this.getWeeks(after);
+        } else {
+          this.multipleStatus.data = this.geDateAll(after, before);
+          this.getWeeks(before);
+        }
+      }
+    }
+
+    /**
+     * 获取每周数据
+     * @param {Object} dateData
+     */
+  }, {
+    key: "getWeeks",
+    value: function getWeeks(dateData) {
+      var _this$getDateObj = this.getDateObj(dateData),
+        year = _this$getDateObj.year,
+        month = _this$getDateObj.month;
+      var preMonthDayAmount = new Date(year, month - 1, 1).getDay();
+      var preMonthDays = this.getPreMonthDays(preMonthDayAmount, this.getDateObj(dateData));
+      var currentMonthDayAmount = new Date(year, month, 0).getDate();
+      var currentMonthDays = this.getCurrentMonthDays(currentMonthDayAmount, this.getDateObj(dateData));
+      var nextMonthDayAmount = 42 - preMonthDayAmount - currentMonthDayAmount;
+      var nextMonthDays = this._getNextMonthDays(nextMonthDayAmount, this.getDateObj(dateData));
+      var calendarDays = [].concat((0, _toConsumableArray2.default)(preMonthDays), (0, _toConsumableArray2.default)(currentMonthDays), (0, _toConsumableArray2.default)(nextMonthDays));
+      var weeks = new Array(6);
+      for (var i = 0; i < calendarDays.length; i++) {
+        var index = Math.floor(i / 7);
+        if (!weeks[index]) {
+          weeks[index] = new Array(7);
+        }
+        weeks[index][i % 7] = calendarDays[i];
+      }
+      this.calendar = calendarDays;
+      this.weeks = weeks;
+    }
+  }]);
+  return Calendar;
+}();
+exports.Calendar = Calendar;
+function getDateTime(date, hideSecond) {
+  return "".concat(getDate(date), " ").concat(getTime(date, hideSecond));
+}
+function getDate(date) {
+  date = fixIosDateFormat(date);
+  date = new Date(date);
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  return "".concat(year, "-").concat(addZero(month), "-").concat(addZero(day));
+}
+function getTime(date, hideSecond) {
+  date = fixIosDateFormat(date);
+  date = new Date(date);
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  return hideSecond ? "".concat(addZero(hour), ":").concat(addZero(minute)) : "".concat(addZero(hour), ":").concat(addZero(minute), ":").concat(addZero(second));
+}
+function addZero(num) {
+  if (num < 10) {
+    num = "0".concat(num);
+  }
+  return num;
+}
+function getDefaultSecond(hideSecond) {
+  return hideSecond ? '00:00' : '00:00:00';
+}
+function dateCompare(startDate, endDate) {
+  startDate = new Date(fixIosDateFormat(startDate));
+  endDate = new Date(fixIosDateFormat(endDate));
+  return startDate <= endDate;
+}
+function checkDate(date) {
+  var dateReg = /((19|20)\d{2})(-|\/)\d{1,2}(-|\/)\d{1,2}/g;
+  return date.match(dateReg);
+}
+//ios低版本15及以下，无法匹配 没有 ’秒‘ 时的情况，所以需要在末尾 秒 加上 问号
+var dateTimeReg = /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])( [0-5]?[0-9]:[0-5]?[0-9](:[0-5]?[0-9])?)?$/;
+function fixIosDateFormat(value) {
+  if (typeof value === 'string' && dateTimeReg.test(value)) {
+    value = value.replace(/-/g, '/');
+  }
+  return value;
+}
+
+/***/ }),
+
+/***/ 258:
 /*!********************************************************************************************************************!*\
   !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-icons/components/uni-icons/uniicons_file_vue.js ***!
   \********************************************************************************************************************/
@@ -19483,7 +19483,7 @@ exports.fontData = fontData;
 
 /***/ }),
 
-/***/ 265:
+/***/ 273:
 /*!*********************************************************************************************************************!*\
   !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
   \*********************************************************************************************************************/
@@ -19498,9 +19498,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 266));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 267));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 268));
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 274));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 275));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 276));
 var _default = {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -19510,7 +19510,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 266:
+/***/ 274:
 /*!********************************************************************************************************************!*\
   !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
   \********************************************************************************************************************/
@@ -19521,7 +19521,7 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show mo
 
 /***/ }),
 
-/***/ 267:
+/***/ 275:
 /*!*************************************************************************************************************************!*\
   !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
   \*************************************************************************************************************************/
@@ -19532,7 +19532,7 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多
 
 /***/ }),
 
-/***/ 268:
+/***/ 276:
 /*!*************************************************************************************************************************!*\
   !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
   \*************************************************************************************************************************/
@@ -19543,7 +19543,7 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多
 
 /***/ }),
 
-/***/ 283:
+/***/ 291:
 /*!****************************************************************************************************************************!*\
   !*** C:/Users/HFS/Desktop/code/ncpsy/ncpsy-uniapp/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \****************************************************************************************************************************/
@@ -20550,7 +20550,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _default = {
-  baseUrl: 'http://192.168.3.63:8088'
+  baseUrl: 'http://localhost:8088'
 };
 exports.default = _default;
 
@@ -20690,7 +20690,7 @@ var debugs = {};
 var debugEnviron;
 exports.debuglog = function(set) {
   if (isUndefined(debugEnviron))
-    debugEnviron = Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).NODE_DEBUG || '';
+    debugEnviron = Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"suyuan","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).NODE_DEBUG || '';
   set = set.toUpperCase();
   if (!debugs[set]) {
     if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {

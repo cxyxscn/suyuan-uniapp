@@ -11,12 +11,10 @@
 						<uni-th width="200" align="center">种植时间</uni-th>
 						<uni-th width="100" align="center">种植周期</uni-th>
 						<uni-th width="100" align="center">农场名称</uni-th>
-						<uni-th width="100" align="center">农场负责</uni-th>
-						<uni-th width="100" align="center">农场电话</uni-th>
+						<uni-th width="100" align="center">农场负责人</uni-th>
+						<uni-th width="100" align="center">联系电话</uni-th>
 						<uni-th width="200" align="center">农场位置</uni-th>
 						<uni-th width="100" align="center">农场消毒</uni-th>
-						<uni-th width="100" align="center">市场负责</uni-th>
-						<uni-th width="100" align="center">市场电话</uni-th>
 						<uni-th width="200" align="center">经过位置</uni-th>
 						<uni-th width="200" align="center">出园时间</uni-th>
 						<uni-th width="100" align="center">施肥状态</uni-th>
@@ -33,8 +31,6 @@
 						<uni-td align="center">{{item.farmerPhone}}</uni-td>
 						<uni-td align="center">{{item.farmLocation}}</uni-td>
 						<uni-td align="center">{{item.farmStatus==0?'是':'否'}}</uni-td>
-						<uni-td align="center">{{item.marker}}</uni-td>
-						<uni-td align="center">{{item.markerPhone}}</uni-td>
 						<uni-td align="center">{{item.passLocation}}</uni-td>
 						<uni-td align="center">{{getTime(item.endTime)}}</uni-td>
 						<uni-td align="center">{{item.status==0?'是':'否'}}</uni-td>
@@ -56,7 +52,7 @@
 			<uni-section title="添加/修改" type="line">
 				<view class="addPro">
 					<uni-forms ref="form" label-position="top" :rules="rules" :modelValue="proFormData">
-						<uni-forms-item label="产品名称" required name="name">
+						<uni-forms-item label="农产品名" required name="name">
 							<uni-easyinput v-model="proFormData.name" placeholder="请输入产品名称" />
 						</uni-forms-item>
 
@@ -77,16 +73,15 @@
 							<uni-easyinput v-model="proFormData.passLocation" placeholder="请输入经过位置" />
 						</uni-forms-item>
 
-						<uni-forms-item label="出园时间" required name="endTime">
-							<uni-datetime-picker type="datetime" v-model="proFormData.endTime" />
-						</uni-forms-item>
-
-
 						<uni-forms-item label="施肥状态">
 							<uni-data-select v-model="proFormData.status" :localdata="range"
 								:clear="false"></uni-data-select>
 						</uni-forms-item>
 
+						<uni-forms-item label="出园时间" required name="endTime">
+							<uni-datetime-picker type="datetime" v-model="proFormData.endTime" />
+						</uni-forms-item>
+						
 						<view class="btn-box">
 							<button type="primary" @click="addPro">提交</button>
 							<button type="primary" @click="close">关闭</button>
@@ -151,14 +146,13 @@
 				},
 				pros: [],
 				proFormData: {
-					marker: uni.getStorageSync("uid"),
-					farmId: Number,
+					farmId: null,
 					name: "",
 					passLocation: "",
-					plantTime: Date,
+					plantTime: null,
 					status: 0,
 					weekly: "",
-					endTime: Date,
+					endTime: null,
 				},
 				range: [{
 						value: 0,

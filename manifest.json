@@ -57,7 +57,7 @@
             "postcss" : false,
             "es6" : false
         },
-		"libVersion": "latest",
+        "libVersion" : "latest",
         "usingComponents" : true
     },
     "mp-alipay" : {

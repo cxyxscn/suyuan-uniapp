@@ -101,7 +101,7 @@ var components
 try {
   components = {
     uniCard: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-card/components/uni-card/uni-card */ "uni_modules/uni-card/components/uni-card/uni-card").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-card/components/uni-card/uni-card.vue */ 151))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-card/components/uni-card/uni-card */ "uni_modules/uni-card/components/uni-card/uni-card").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-card/components/uni-card/uni-card.vue */ 159))
     },
   }
 } catch (e) {
@@ -218,6 +218,11 @@ var _default = {
   onShow: function onShow() {
     this.role = uni.getStorageSync("role");
     this.data.uid = uni.getStorageSync("uid");
+    if (uni.getStorageSync("role") !== 0) {
+      uni.setTabBarBadge({
+        text: '农产品溯源管理系统'
+      });
+    }
   },
   methods: {
     goToFarm: function goToFarm() {

@@ -11,6 +11,7 @@
 			</uni-card>
 			<view class="btn-box">
 				<button type="primary" @click="goToFarm">农场管理</button>
+				<button type="primary" @click="goToPro">农产品管理</button>
 			</view>
 		</view>
 
@@ -19,11 +20,10 @@
 				<view class="uni-h4 title">农产品溯源管理平台</view>
 			</uni-card>
 			<view class="btn-box">
-				<button type="primary" @click="goToPro">产品管理</button>
-				<button type="primary" @click="goToSy">溯源管理</button>
+				<button type="primary" @click="goToSy">农产品溯源管理</button>
 			</view>
 		</view>
-		
+
 		<view v-if="role===3">
 			<uni-card>
 				<view class="uni-h4 title">农产品溯源管理平台</view>
@@ -53,6 +53,11 @@
 		onShow() {
 			this.role = uni.getStorageSync("role")
 			this.data.uid = uni.getStorageSync("uid")
+			if (uni.getStorageSync("role") !== 0) {
+				uni.setTabBarBadge({
+					text:'农产品溯源管理系统'
+				})
+			}
 		},
 		methods: {
 			goToFarm() {
