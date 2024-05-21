@@ -1,1 +1,0 @@
-<view class="container"><uni-list vue-id="8b348dae-1" bind:__l="__l" vue-slots="{{['default']}}"><block wx:for="{{sypj}}" wx:for-item="item" wx:for-index="index" wx:key="index"><uni-list-item vue-id="{{('8b348dae-2-'+index)+','+('8b348dae-1')}}" title="{{'评论内容：'+item.comment}}" rightText="{{'溯源编号：'+item.syid}}" bind:__l="__l"></uni-list-item></block></uni-list></view>
