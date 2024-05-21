@@ -1,2 +1,4 @@
-node_modules/
-unpackage/
+/node_modules/
+/unpackage/
+/.hbuilderx/
+/.idea/
