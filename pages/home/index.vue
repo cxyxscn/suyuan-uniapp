@@ -53,11 +53,6 @@
 		onShow() {
 			this.role = uni.getStorageSync("role")
 			this.data.uid = uni.getStorageSync("uid")
-			if (uni.getStorageSync("role") !== 0) {
-				uni.setTabBarBadge({
-					text:'农产品溯源管理系统'
-				})
-			}
 		},
 		methods: {
 			goToFarm() {
